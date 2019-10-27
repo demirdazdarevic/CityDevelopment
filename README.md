@@ -1,3 +1,0 @@
-#CityDevelopment
-Prvi Repozitorijum
-Kultura
