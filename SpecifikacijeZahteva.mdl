@@ -4742,7 +4742,374 @@
 				Focus_Entry 	@184
 				origin     	(223, 464)
 				terminus   	(640, 464)
-				ordinal    	0))))))
+				ordinal    	0)))))
+	    (object Class_Category "Pregled arhitekture"
+		quid       	"5DEEC92000FA"
+		exportControl 	"Public"
+		logical_models 	(list unit_reference_list
+		    (object Class_Category "Korisnicki interfejs"
+			quid       	"5DEEC995021F"
+			stereotype 	"sloj"
+			visible_categories 	(list visibility_relationship_list
+			    (object Visibility_Relationship
+				quid       	"5DEECAD2006A"
+				supplier   	"Use Case View::Pregled arhitekture::WPF"
+				quidu      	"5DEEC99B00F6")
+			    (object Visibility_Relationship
+				quid       	"5DEECAD902AD"
+				supplier   	"Use Case View::Pregled arhitekture::C\\#"
+				quidu      	"5DEEC9A20217")
+			    (object Visibility_Relationship
+				quid       	"5DEECADB0281"
+				supplier   	"Use Case View::Pregled arhitekture::Aplikaciona logika"
+				quidu      	"5DEEC9970284"))
+			exportControl 	"Public"
+			logical_models 	(list unit_reference_list)
+			logical_presentations 	(list unit_reference_list
+			    (object UseCaseDiagram "Main"
+				quid       	"5DEEC9EB01D9"
+				title      	"Main"
+				zoom       	100
+				max_height 	28350
+				max_width  	21600
+				origin_x   	0
+				origin_y   	0
+				items      	(list diagram_item_list))))
+		    (object Class_Category "Aplikaciona logika"
+			quid       	"5DEEC9970284"
+			stereotype 	"sloj"
+			visible_categories 	(list visibility_relationship_list
+			    (object Visibility_Relationship
+				quid       	"5DEECAE60088"
+				supplier   	"Use Case View::Pregled arhitekture::C\\#"
+				quidu      	"5DEEC9A20217")
+			    (object Visibility_Relationship
+				quid       	"5DEECAF00137"
+				supplier   	"Use Case View::Pregled arhitekture::SQL"
+				quidu      	"5DEEC9A401E2")
+			    (object Visibility_Relationship
+				quid       	"5DEECAF3003D"
+				supplier   	"Use Case View::Pregled arhitekture::Pristup podacima"
+				quidu      	"5DEEC999024E"))
+			exportControl 	"Public"
+			logical_models 	(list unit_reference_list)
+			logical_presentations 	(list unit_reference_list
+			    (object UseCaseDiagram "Main"
+				quid       	"5DEECA04033D"
+				title      	"Main"
+				zoom       	100
+				max_height 	28350
+				max_width  	21600
+				origin_x   	0
+				origin_y   	0
+				items      	(list diagram_item_list))))
+		    (object Class_Category "Pristup podacima"
+			quid       	"5DEEC999024E"
+			stereotype 	"sloj"
+			visible_categories 	(list visibility_relationship_list
+			    (object Visibility_Relationship
+				quid       	"5DEECAFF00CF"
+				supplier   	"Use Case View::Pregled arhitekture::SQL"
+				quidu      	"5DEEC9A401E2"))
+			exportControl 	"Public"
+			logical_models 	(list unit_reference_list)
+			logical_presentations 	(list unit_reference_list))
+		    (object Class_Category "WPF"
+			quid       	"5DEEC99B00F6"
+			stereotype 	"tehnologija"
+			exportControl 	"Public"
+			logical_models 	(list unit_reference_list)
+			logical_presentations 	(list unit_reference_list))
+		    (object Class_Category "C#"
+			quid       	"5DEEC9A20217"
+			stereotype 	"sloj"
+			exportControl 	"Public"
+			logical_models 	(list unit_reference_list)
+			logical_presentations 	(list unit_reference_list))
+		    (object Class_Category "SQL"
+			quid       	"5DEEC9A401E2"
+			stereotype 	"tehnologija"
+			exportControl 	"Public"
+			logical_models 	(list unit_reference_list)
+			logical_presentations 	(list unit_reference_list)))
+		logical_presentations 	(list unit_reference_list
+		    (object UseCaseDiagram "Pregled_arhitekture"
+			quid       	"5DEEC94A035B"
+			title      	"Pregled_arhitekture"
+			zoom       	100
+			max_height 	28350
+			max_width  	21600
+			origin_x   	0
+			origin_y   	0
+			items      	(list diagram_item_list
+			    (object CategoryView "Use Case View::Pregled arhitekture::Korisnicki interfejs" @232
+				location   	(447, 212)
+				font       	(object Font
+				    size       	9
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@232
+				    location   	(303, 175)
+				    fill_color 	13434879
+				    nlines     	2
+				    max_width  	288
+				    justify    	0
+				    label      	"Korisnicki interfejs")
+				stereotype 	(object ItemLabel
+				    Parent_View 	@232
+				    location   	(303, 128)
+				    fill_color 	13434879
+				    anchor     	10
+				    nlines     	1
+				    max_width  	288
+				    justify    	0
+				    label      	"<<sloj>>")
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	13434879
+				quidu      	"5DEEC995021F"
+				width      	300
+				height     	180)
+			    (object CategoryView "Use Case View::Pregled arhitekture::Aplikaciona logika" @233
+				location   	(447, 659)
+				font       	(object Font
+				    size       	9
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@233
+				    location   	(303, 622)
+				    fill_color 	13434879
+				    nlines     	2
+				    max_width  	288
+				    justify    	0
+				    label      	"Aplikaciona logika")
+				stereotype 	(object ItemLabel
+				    Parent_View 	@233
+				    location   	(303, 575)
+				    fill_color 	13434879
+				    anchor     	10
+				    nlines     	1
+				    max_width  	288
+				    justify    	0
+				    label      	"<<sloj>>")
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	13434879
+				quidu      	"5DEEC9970284"
+				width      	300
+				height     	180)
+			    (object CategoryView "Use Case View::Pregled arhitekture::Pristup podacima" @234
+				location   	(450, 1125)
+				font       	(object Font
+				    size       	9
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@234
+				    location   	(306, 1088)
+				    fill_color 	13434879
+				    nlines     	2
+				    max_width  	288
+				    justify    	0
+				    label      	"Pristup podacima")
+				stereotype 	(object ItemLabel
+				    Parent_View 	@234
+				    location   	(306, 1041)
+				    fill_color 	13434879
+				    anchor     	10
+				    nlines     	1
+				    max_width  	288
+				    justify    	0
+				    label      	"<<sloj>>")
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	13434879
+				quidu      	"5DEEC999024E"
+				width      	300
+				height     	180)
+			    (object CategoryView "Use Case View::Pregled arhitekture::WPF" @235
+				location   	(1228, 212)
+				font       	(object Font
+				    size       	9
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@235
+				    location   	(1084, 175)
+				    nlines     	2
+				    max_width  	288
+				    justify    	0
+				    label      	"WPF")
+				stereotype 	(object ItemLabel
+				    Parent_View 	@235
+				    location   	(1084, 128)
+				    anchor     	10
+				    nlines     	1
+				    max_width  	288
+				    justify    	0
+				    label      	"<<tehnologija>>")
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	16777215
+				quidu      	"5DEEC99B00F6"
+				width      	300
+				height     	180)
+			    (object CategoryView "Use Case View::Pregled arhitekture::C\\#" @236
+				location   	(1213, 659)
+				font       	(object Font
+				    size       	9
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@236
+				    location   	(1069, 622)
+				    nlines     	2
+				    max_width  	288
+				    justify    	0
+				    label      	"C#")
+				stereotype 	(object ItemLabel
+				    Parent_View 	@236
+				    location   	(1069, 575)
+				    anchor     	10
+				    nlines     	1
+				    max_width  	288
+				    justify    	0
+				    label      	"<<sloj>>")
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	16777215
+				quidu      	"5DEEC9A20217"
+				width      	300
+				height     	180)
+			    (object CategoryView "Use Case View::Pregled arhitekture::SQL" @237
+				location   	(1225, 1125)
+				font       	(object Font
+				    size       	9
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object ItemLabel
+				    Parent_View 	@237
+				    location   	(1081, 1088)
+				    nlines     	2
+				    max_width  	288
+				    justify    	0
+				    label      	"SQL")
+				stereotype 	(object ItemLabel
+				    Parent_View 	@237
+				    location   	(1081, 1041)
+				    anchor     	10
+				    nlines     	1
+				    max_width  	288
+				    justify    	0
+				    label      	"<<tehnologija>>")
+				icon_style 	"Icon"
+				line_color 	3342489
+				fill_color 	16777215
+				quidu      	"5DEEC9A401E2"
+				width      	300
+				height     	180)
+			    (object ImportView "" @238
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DEECAD2006A"
+				client     	@232
+				supplier   	@235
+				vertices   	(list Points
+				    (597, 212)
+				    (1077, 212))
+				line_style 	0)
+			    (object ImportView "" @239
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DEECAD902AD"
+				client     	@232
+				supplier   	@236
+				vertices   	(list Points
+				    (597, 299)
+				    (1062, 570))
+				line_style 	0)
+			    (object ImportView "" @240
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DEECADB0281"
+				client     	@232
+				supplier   	@233
+				vertices   	(list Points
+				    (447, 302)
+				    (447, 514))
+				line_style 	0)
+			    (object ImportView "" @241
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DEECAE60088"
+				client     	@233
+				supplier   	@236
+				vertices   	(list Points
+				    (597, 659)
+				    (1062, 659))
+				line_style 	0)
+			    (object ImportView "" @242
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DEECAF00137"
+				client     	@233
+				supplier   	@237
+				vertices   	(list Points
+				    (597, 748)
+				    (1074, 1034))
+				line_style 	0)
+			    (object ImportView "" @243
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DEECAF3003D"
+				client     	@233
+				supplier   	@234
+				vertices   	(list Points
+				    (447, 749)
+				    (448, 980))
+				line_style 	0)
+			    (object ImportView "" @244
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DEECAFF00CF"
+				client     	@234
+				supplier   	@237
+				vertices   	(list Points
+				    (600, 1125)
+				    (1074, 1125))
+				line_style 	0))))))
 	logical_presentations 	(list unit_reference_list
 	    (object UseCaseDiagram "Main"
 		quid       	"35C6339B029F"
@@ -4915,9 +5282,9 @@
 					
 					stereotype 	"use-case realization"
 					logical_models 	(list unit_reference_list
-					    (object Mechanism @232
+					    (object Mechanism @245
 						logical_models 	(list unit_reference_list))
-					    (object Mechanism @233
+					    (object Mechanism @246
 						logical_models 	(list unit_reference_list)))
 					logical_presentations 	(list unit_reference_list
 					    (object ClassDiagram "<Use Case Name> -  Realize Dependencies"
@@ -4941,7 +5308,7 @@
 						origin_y   	0
 						items      	(list diagram_item_list))
 					    (object InteractionDiagram "<Use Case Name> -  Basic Flow"
-						mechanism_ref 	@232
+						mechanism_ref 	@245
 						quid       	"35081E3603A2"
 						title      	"<Use Case Name> -  Basic Flow"
 						zoom       	100
@@ -4951,7 +5318,7 @@
 						origin_y   	0
 						items      	(list diagram_item_list))
 					    (object InteractionDiagram "<Use Case Name> -  <Flow Type>"
-						mechanism_ref 	@233
+						mechanism_ref 	@246
 						quid       	"3540A0B901AE"
 						title      	"<Use Case Name> -  <Flow Type>"
 						zoom       	100
@@ -4971,7 +5338,7 @@
 					origin_x   	0
 					origin_y   	0
 					items      	(list diagram_item_list
-					    (object NoteView @234
+					    (object NoteView @247
 						location   	(704, 144)
 						font       	(object Font
 						    size       	9
@@ -4983,7 +5350,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@234
+						    Parent_View 	@247
 						    location   	(38, 25)
 						    fill_color 	13434879
 						    nlines     	5
@@ -4997,7 +5364,7 @@
 						fill_color 	13434879
 						width      	1356
 						height     	250)
-					    (object UseCaseView "Logical View::Design Model::Use-Case Realizations::<Use-Case Name>::<Use-Case Name>" @235
+					    (object UseCaseView "Logical View::Design Model::Use-Case Realizations::<Use-Case Name>::<Use-Case Name>" @248
 						location   	(608, 960)
 						font       	(object Font
 						    size       	9
@@ -5009,7 +5376,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@235
+						    Parent_View 	@248
 						    location   	(608, 1148)
 						    anchor_loc 	1
 						    nlines     	2
@@ -5017,7 +5384,7 @@
 						    justify    	0
 						    label      	"<Use-Case Name>")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@235
+						    Parent_View 	@248
 						    location   	(608, 1078)
 						    anchor     	10
 						    anchor_loc 	1
@@ -5071,7 +5438,7 @@
 				origin_x   	0
 				origin_y   	0
 				items      	(list diagram_item_list
-				    (object ClassView "Class" "Logical View::Design Model::Process View::<Process Name>" @236
+				    (object ClassView "Class" "Logical View::Design Model::Process View::<Process Name>" @249
 					ShowCompartmentStereotypes 	TRUE
 					IncludeAttribute 	TRUE
 					IncludeOperation 	TRUE
@@ -5086,7 +5453,7 @@
 					    color      	0
 					    default_color 	TRUE)
 					label      	(object ItemLabel
-					    Parent_View 	@236
+					    Parent_View 	@249
 					    location   	(122, 436)
 					    fill_color 	13434879
 					    nlines     	1
@@ -5094,7 +5461,7 @@
 					    justify    	0
 					    label      	"<Process Name>")
 					stereotype 	(object ItemLabel
-					    Parent_View 	@236
+					    Parent_View 	@249
 					    location   	(122, 389)
 					    fill_color 	13434879
 					    anchor     	10
@@ -5110,7 +5477,7 @@
 					height     	172
 					annotation 	8
 					autoResize 	TRUE)
-				    (object ClassView "Class" "Logical View::Design Model::Process View::<Thread Name>" @237
+				    (object ClassView "Class" "Logical View::Design Model::Process View::<Thread Name>" @250
 					ShowCompartmentStereotypes 	TRUE
 					IncludeAttribute 	TRUE
 					IncludeOperation 	TRUE
@@ -5125,7 +5492,7 @@
 					    color      	0
 					    default_color 	TRUE)
 					label      	(object ItemLabel
-					    Parent_View 	@237
+					    Parent_View 	@250
 					    location   	(740, 436)
 					    fill_color 	13434879
 					    nlines     	1
@@ -5133,7 +5500,7 @@
 					    justify    	0
 					    label      	"<Thread Name>")
 					stereotype 	(object ItemLabel
-					    Parent_View 	@237
+					    Parent_View 	@250
 					    location   	(740, 389)
 					    fill_color 	13434879
 					    anchor     	10
@@ -5149,32 +5516,32 @@
 					height     	172
 					annotation 	8
 					autoResize 	TRUE)
-				    (object AssociationViewNew "$UNNAMED$109" @238
+				    (object AssociationViewNew "$UNNAMED$109" @251
 					location   	(596, 464)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"35DB3E72017C"
 					roleview_list 	(list RoleViews
-					    (object RoleView "$UNNAMED$110" @239
-						Parent_View 	@238
+					    (object RoleView "$UNNAMED$110" @252
+						Parent_View 	@251
 						location   	(-300, 0)
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"35DB3E73005A"
-						client     	@238
-						supplier   	@236
+						client     	@251
+						supplier   	@249
 						vertices   	(list Points
 						    (596, 464)
 						    (463, 464))
 						line_style 	0)
-					    (object RoleView "$UNNAMED$111" @240
-						Parent_View 	@238
+					    (object RoleView "$UNNAMED$111" @253
+						Parent_View 	@251
 						location   	(-300, 0)
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"35DB3E730096"
-						client     	@238
-						supplier   	@237
+						client     	@251
+						supplier   	@250
 						vertices   	(list Points
 						    (596, 464)
 						    (730, 464))
@@ -5190,7 +5557,7 @@
 			origin_x   	0
 			origin_y   	0
 			items      	(list diagram_item_list
-			    (object NoteView @241
+			    (object NoteView @254
 				location   	(672, 304)
 				font       	(object Font
 				    size       	9
@@ -5202,7 +5569,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@241
+				    Parent_View 	@254
 				    location   	(28, 19)
 				    fill_color 	13434879
 				    nlines     	13
@@ -5226,7 +5593,7 @@
 				fill_color 	13434879
 				width      	1313
 				height     	582)
-			    (object NoteView @242
+			    (object NoteView @255
 				location   	(1696, 160)
 				font       	(object Font
 				    size       	9
@@ -5238,7 +5605,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@242
+				    Parent_View 	@255
 				    location   	(1358, 29)
 				    fill_color 	13434879
 				    nlines     	5
@@ -5274,7 +5641,7 @@
 			origin_x   	0
 			origin_y   	0
 			items      	(list diagram_item_list
-			    (object NoteView @243
+			    (object NoteView @256
 				location   	(576, 256)
 				font       	(object Font
 				    size       	9
@@ -5286,7 +5653,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@243
+				    Parent_View 	@256
 				    location   	(44, 31)
 				    fill_color 	13434879
 				    nlines     	9
@@ -5306,7 +5673,7 @@
 				fill_color 	13434879
 				width      	1088
 				height     	463)
-			    (object NoteView @244
+			    (object NoteView @257
 				location   	(1520, 176)
 				font       	(object Font
 				    size       	9
@@ -5318,7 +5685,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@244
+				    Parent_View 	@257
 				    location   	(1182, 45)
 				    fill_color 	13434879
 				    nlines     	5
@@ -5432,7 +5799,7 @@
 			origin_x   	0
 			origin_y   	0
 			items      	(list diagram_item_list
-			    (object NoteView @245
+			    (object NoteView @258
 				location   	(624, 160)
 				font       	(object Font
 				    size       	9
@@ -5444,7 +5811,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@245
+				    Parent_View 	@258
 				    location   	(21, 26)
 				    fill_color 	13434879
 				    nlines     	5
@@ -5471,7 +5838,7 @@
 		origin_x   	0
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object SubSysView "Component View::Implementation Model" @246
+		    (object SubSysView "Component View::Implementation Model" @259
 			location   	(736, 800)
 			font       	(object Font
 			    size       	9
@@ -5483,7 +5850,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@246
+			    Parent_View 	@259
 			    location   	(552, 713)
 			    fill_color 	13434879
 			    nlines     	2
@@ -5546,7 +5913,7 @@
 		origin_x   	0
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object ProcessorView "<processor name>" @247
+		    (object ProcessorView "<processor name>" @260
 			location   	(512, 1056)
 			font       	(object Font
 			    size       	9
@@ -5558,7 +5925,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@247
+			    Parent_View 	@260
 			    location   	(276, 900)
 			    nlines     	2
 			    max_width  	400
@@ -5569,7 +5936,7 @@
 			width      	475
 			height     	381
 			annotation 	3)
-		    (object DeviceView "<device name>" @248
+		    (object DeviceView "<device name>" @261
 			location   	(1040, 1056)
 			font       	(object Font
 			    size       	9
@@ -5581,7 +5948,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@248
+			    Parent_View 	@261
 			    location   	(867, 950)
 			    nlines     	2
 			    max_width  	275
@@ -5592,16 +5959,16 @@
 			width      	350
 			height     	282
 			annotation 	0)
-		    (object ConnectionView "" @249
+		    (object ConnectionView "" @262
 			stereotype 	TRUE
 			quidu      	"34DBBD4B008C"
-			client     	@247
-			supplier   	@248
+			client     	@260
+			supplier   	@261
 			vertices   	(list Points
 			    (718, 1056)
 			    (865, 1056))
 			line_style 	0)
-		    (object NoteView @250
+		    (object NoteView @263
 			location   	(816, 304)
 			font       	(object Font
 			    size       	9
@@ -5613,7 +5980,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@250
+			    Parent_View 	@263
 			    location   	(38, 29)
 			    fill_color 	13434879
 			    nlines     	11
