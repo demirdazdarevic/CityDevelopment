@@ -1265,17 +1265,17 @@
 					    (2051, 966)
 					    (1991, 926))
 					line_style 	0)))))))
-	    (object Class_Category "Dijagram Sekvence Izmene Podataka"
+	    (object Class_Category "Dijagram Sekvence Evidentiranje  Uradjenog Posla"
 		quid       	"5DEBC863015A"
 		exportControl 	"Public"
 		logical_models 	(list unit_reference_list
 		    (object Class "Glavni Prozor aplikacije"
 			quid       	"5DEBC95301E7")
-		    (object Class "Prozor sa listom arhiviranih poslova"
+		    (object Class "Prozor sa listom mogucih dnevnih poslova"
 			quid       	"5DEBC9660367")
 		    (object Class "Stranica sa podacima odabranog arhiviranog posla"
 			quid       	"5DEBC97902E0")
-		    (object Class "Skripta za azuriranje podataka o poslu"
+		    (object Class "Skripta za dodavanje evidentiranog posla u Arhivu"
 			quid       	"5DEBC98A020F")
 		    (object Class "Clan JKPa"
 			quid       	"5DEBC9BC0231"
@@ -1293,35 +1293,17 @@
 					supplier   	"$UNNAMED$59"
 					quidu      	"5DEBC8840170"
 					messages   	(list Messages
-					    (object Message "Bira Region"
+					    (object Message "Bira Tip posla"
 						quid       	"5DEBC884015B"
 						frequency  	"Aperiodic"
 						synchronization 	"Simple"
 						dir        	"FromClientToSupplier"
-						sequence   	"3"
-						ordinal    	2
+						sequence   	"6"
+						ordinal    	5
 						quidu      	"000000000000"
 						creation   	FALSE)
-					    (object Message "Bira vremenski period"
+					    (object Message "Cekira odradjene poslove"
 						quid       	"5DEBC884015D"
-						frequency  	"Aperiodic"
-						synchronization 	"Simple"
-						dir        	"FromClientToSupplier"
-						sequence   	"4"
-						ordinal    	3
-						quidu      	"000000000000"
-						creation   	FALSE)
-					    (object Message "Potvrdi()"
-						quid       	"5DEBC884015F"
-						frequency  	"Aperiodic"
-						synchronization 	"Simple"
-						dir        	"FromClientToSupplier"
-						sequence   	"5"
-						ordinal    	4
-						quidu      	"000000000000"
-						creation   	FALSE)
-					    (object Message "Bira arhivirani posao za izmenu"
-						quid       	"5DEBC8840161"
 						frequency  	"Aperiodic"
 						synchronization 	"Simple"
 						dir        	"FromClientToSupplier"
@@ -1329,41 +1311,27 @@
 						ordinal    	6
 						quidu      	"000000000000"
 						creation   	FALSE)
-					    (object Message "Izmeni()"
-						quid       	"5DEBC8840163"
+					    (object Message "Potvrdi()"
+						quid       	"5DEBC884015F"
 						frequency  	"Aperiodic"
 						synchronization 	"Simple"
 						dir        	"FromClientToSupplier"
 						sequence   	"8"
 						ordinal    	7
 						quidu      	"000000000000"
-						creation   	FALSE)))
-				    (object Link
-					quid       	"5DEBC8840165"
-					supplier   	"$UNNAMED$60"
-					quidu      	"5DEBC8840180"
-					messages   	(list Messages
-					    (object Message "Menja podatke"
-						quid       	"5DEBC8840166"
-						frequency  	"Aperiodic"
-						synchronization 	"Simple"
-						dir        	"FromClientToSupplier"
-						sequence   	"10"
-						ordinal    	9
-						quidu      	"000000000000"
 						creation   	FALSE)
-					    (object Message "Potvrdi()"
-						quid       	"5DEBC8840168"
+					    (object Message "Show()"
+						quid       	"5DFEBD6D0161"
 						frequency  	"Aperiodic"
 						synchronization 	"Simple"
-						dir        	"FromClientToSupplier"
-						sequence   	"11"
-						ordinal    	10
+						dir        	"ToClientFromSupplier"
+						sequence   	"16"
+						ordinal    	15
 						quidu      	"000000000000"
 						creation   	FALSE)))
 				    (object Link
 					quid       	"5DEBC884016A"
-					supplier   	"$UNNAMED$61"
+					supplier   	"$UNNAMED$60"
 					quidu      	"5DEBC8840193"
 					messages   	(list Messages
 					    (object Message "Bira opciju Lista"
@@ -1375,12 +1343,12 @@
 						ordinal    	0
 						quidu      	"000000000000"
 						creation   	FALSE))))
-				class      	"Use Case View::Dijagram Sekvence Izmene Podataka::Clan JKPa"
+				class      	"Use Case View::Dijagram Sekvence Evidentiranje  Uradjenog Posla::Clan JKPa"
 				quidu      	"5DEBC9BC0231"
 				persistence 	"Transient"
 				creationObj 	FALSE
 				multi      	FALSE)
-			    (object Object "$UNNAMED$61"
+			    (object Object "$UNNAMED$60"
 				quid       	"5DEBC8840193"
 				collaborators 	(list link_list
 				    (object Link
@@ -1397,7 +1365,7 @@
 						ordinal    	1
 						quidu      	"000000000000"
 						creation   	FALSE))))
-				class      	"Use Case View::Dijagram Sekvence Izmene Podataka::Glavni Prozor aplikacije"
+				class      	"Use Case View::Dijagram Sekvence Evidentiranje  Uradjenog Posla::Glavni Prozor aplikacije"
 				quidu      	"5DEBC95301E7"
 				persistence 	"Transient"
 				creationObj 	FALSE
@@ -1415,26 +1383,26 @@
 						frequency  	"Aperiodic"
 						synchronization 	"Simple"
 						dir        	"FromClientToSupplier"
-						sequence   	"6"
-						ordinal    	5
+						sequence   	"5"
+						ordinal    	4
 						quidu      	"000000000000"
 						creation   	FALSE)
-					    (object Message "<refresh>"
-						quid       	"5DEBC8840174"
+					    (object Message "Sklanja posao iz liste"
+						quid       	"5DFEBD5703B2"
 						frequency  	"Aperiodic"
 						synchronization 	"Simple"
 						dir        	"FromClientToSupplier"
-						sequence   	"14"
-						ordinal    	13
+						sequence   	"15"
+						ordinal    	14
 						quidu      	"000000000000"
 						creation   	FALSE)))
 				    (object Link
-					quid       	"5DEBC8840176"
-					supplier   	"$UNNAMED$60"
-					quidu      	"5DEBC8840180"
+					quid       	"5DFEBB3E0253"
+					supplier   	"$UNNAMED$61"
+					quidu      	"5DEBC8840188"
 					messages   	(list Messages
-					    (object Message "<show>"
-						quid       	"5DEBC8840177"
+					    (object Message "Salje ime ulice i tip evidentiranog posla"
+						quid       	"5DFEBB3E0254"
 						frequency  	"Aperiodic"
 						synchronization 	"Simple"
 						dir        	"FromClientToSupplier"
@@ -1442,39 +1410,17 @@
 						ordinal    	8
 						quidu      	"000000000000"
 						creation   	FALSE))))
-				class      	"Use Case View::Dijagram Sekvence Izmene Podataka::Prozor sa listom arhiviranih poslova"
+				class      	"Use Case View::Dijagram Sekvence Evidentiranje  Uradjenog Posla::Prozor sa listom mogucih dnevnih poslova"
 				quidu      	"5DEBC9660367"
 				persistence 	"Transient"
 				creationObj 	FALSE
 				multi      	TRUE)
-			    (object Object "$UNNAMED$60"
-				quid       	"5DEBC8840180"
-				collaborators 	(list link_list
-				    (object Link
-					quid       	"5DEBC8840181"
-					supplier   	"$UNNAMED$62"
-					quidu      	"5DEBC8840188"
-					messages   	(list Messages
-					    (object Message "Save(...)"
-						quid       	"5DEBC8840182"
-						frequency  	"Aperiodic"
-						synchronization 	"Simple"
-						dir        	"FromClientToSupplier"
-						sequence   	"12"
-						ordinal    	11
-						quidu      	"000000000000"
-						creation   	FALSE))))
-				class      	"Use Case View::Dijagram Sekvence Izmene Podataka::Stranica sa podacima odabranog arhiviranog posla"
-				quidu      	"5DEBC97902E0"
-				persistence 	"Transient"
-				creationObj 	FALSE
-				multi      	FALSE)
-			    (object Object "$UNNAMED$62"
+			    (object Object "$UNNAMED$61"
 				quid       	"5DEBC8840188"
 				collaborators 	(list link_list
 				    (object Link
 					quid       	"5DEBC8840189"
-					supplier   	"$UNNAMED$63"
+					supplier   	"$UNNAMED$62"
 					quidu      	"5DEBC884018E"
 					messages   	(list Messages
 					    (object Message "Update(...)"
@@ -1485,29 +1431,89 @@
 						sequence   	"13"
 						ordinal    	12
 						quidu      	"000000000000"
+						creation   	FALSE)
+					    (object Message "Upisuje ime ulice, tip posla i vreme evidencije u Arhivu"
+						quid       	"5DFEBBFE0138"
+						frequency  	"Aperiodic"
+						synchronization 	"Simple"
+						dir        	"FromClientToSupplier"
+						sequence   	"10"
+						ordinal    	9
+						quidu      	"000000000000"
+						creation   	FALSE)
+					    (object Message "Menja atribut Moguceg posla Izvrsen sa 0 na 1"
+						quid       	"5DFEBC65029C"
+						frequency  	"Aperiodic"
+						synchronization 	"Simple"
+						dir        	"FromClientToSupplier"
+						sequence   	"12"
+						ordinal    	11
+						quidu      	"000000000000"
+						creation   	FALSE)
+					    (object Message "Save()"
+						quid       	"5DFEBD1901BF"
+						frequency  	"Aperiodic"
+						synchronization 	"Simple"
+						dir        	"FromClientToSupplier"
+						sequence   	"11"
+						ordinal    	10
+						quidu      	"000000000000"
 						creation   	FALSE))))
-				class      	"Use Case View::Dijagram Sekvence Izmene Podataka::Skripta za azuriranje podataka o poslu"
+				class      	"Use Case View::Dijagram Sekvence Evidentiranje  Uradjenog Posla::Skripta za dodavanje evidentiranog posla u Arhivu"
 				quidu      	"5DEBC98A020F"
 				persistence 	"Transient"
 				creationObj 	FALSE
 				multi      	FALSE)
-			    (object Object "$UNNAMED$63"
+			    (object Object "$UNNAMED$62"
 				quid       	"5DEBC884018E"
-				class      	"Use Case View::Dijagram Sekvence Izmene Podataka::Baza"
+				collaborators 	(list link_list
+				    (object Link
+					quid       	"5DFEBBB30003"
+					supplier   	"$UNNAMED$59"
+					quidu      	"5DEBC8840170"
+					messages   	(list Messages
+					    (object Message "Salje moguce poslove"
+						quid       	"5DFEBBB30004"
+						frequency  	"Aperiodic"
+						synchronization 	"Simple"
+						dir        	"FromClientToSupplier"
+						sequence   	"4"
+						ordinal    	3
+						quidu      	"000000000000"
+						creation   	FALSE)
+					    (object Message "Obavestava da taj posao vise nije moguc"
+						quid       	"5DFEBCB903AF"
+						frequency  	"Aperiodic"
+						synchronization 	"Simple"
+						dir        	"FromClientToSupplier"
+						sequence   	"14"
+						ordinal    	13
+						quidu      	"000000000000"
+						creation   	FALSE)
+					    (object Message "Uzima moguce poslove"
+						quid       	"5DFEBD390048"
+						frequency  	"Aperiodic"
+						synchronization 	"Simple"
+						dir        	"ToClientFromSupplier"
+						sequence   	"3"
+						ordinal    	2
+						quidu      	"000000000000"
+						creation   	FALSE))))
+				class      	"Use Case View::Dijagram Sekvence Evidentiranje  Uradjenog Posla::Baza"
 				quidu      	"5DEBC9FE013A"
 				persistence 	"Transient"
-				creationObj 	FALSE
+				creationObj 	TRUE
 				multi      	TRUE))))
 		logical_presentations 	(list unit_reference_list
-		    (object InteractionDiagram "DijagramSekIzmenePod"
+		    (object InteractionDiagram "DijagramSekEvidentiranjePosla"
 			mechanism_ref 	@55
 			quid       	"5DEBC875015A"
-			title      	"DijagramSekIzmenePod"
-			zoom       	100
+			title      	"DijagramSekEvidentiranjePosla"
+			zoom       	84
 			max_height 	28350
 			max_width  	21600
-			origin_x   	762
-			origin_y   	0
+			origin_x   	0
+			origin_y   	48
 			items      	(list diagram_item_list
 			    (object InterObjView "$UNNAMED$58" @56
 				location   	(571, 258)
@@ -1534,68 +1540,47 @@
 				fill_color 	13434879
 				quidu      	"5DEBC8840159"
 				width      	120
-				height     	2879
+				height     	3150
 				icon_height 	162
 				icon_width 	120
 				icon_y_offset 	0
 				annotation 	1
 				Focus_Of_Control 	(object Focus_Of_Control "" @57
-				    location   	(571, 539)
+				    location   	(571, 460)
 				    line_color 	3342489
 				    InterObjView 	@56
-				    height     	151
-				    y_coord    	61
+				    height     	90
+				    y_coord    	0
 				    Nested     	FALSE)
 				Focus_Of_Control 	(object Focus_Of_Control "" @58
-				    location   	(571, 982)
+				    location   	(571, 1465)
 				    line_color 	3342489
 				    InterObjView 	@56
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE)
 				Focus_Of_Control 	(object Focus_Of_Control "" @59
-				    location   	(571, 1190)
+				    location   	(571, 1641)
 				    line_color 	3342489
 				    InterObjView 	@56
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE)
 				Focus_Of_Control 	(object Focus_Of_Control "" @60
-				    location   	(571, 1382)
+				    location   	(571, 1821)
 				    line_color 	3342489
 				    InterObjView 	@56
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE)
 				Focus_Of_Control 	(object Focus_Of_Control "" @61
-				    location   	(571, 1798)
-				    line_color 	3342489
-				    InterObjView 	@56
-				    height     	90
-				    y_coord    	0
-				    Nested     	FALSE)
-				Focus_Of_Control 	(object Focus_Of_Control "" @62
-				    location   	(571, 1990)
-				    line_color 	3342489
-				    InterObjView 	@56
-				    height     	90
-				    y_coord    	0
-				    Nested     	FALSE)
-				Focus_Of_Control 	(object Focus_Of_Control "" @63
-				    location   	(571, 2342)
-				    line_color 	3342489
-				    InterObjView 	@56
-				    height     	90
-				    y_coord    	0
-				    Nested     	FALSE)
-				Focus_Of_Control 	(object Focus_Of_Control "" @64
-				    location   	(571, 2502)
+				    location   	(571, 3228)
 				    line_color 	3342489
 				    InterObjView 	@56
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE))
-			    (object InterObjView "$UNNAMED$61" @65
+			    (object InterObjView "$UNNAMED$60" @62
 				location   	(1083, 225)
 				font       	(object Font
 				    size       	9
@@ -1607,7 +1592,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@65
+				    Parent_View 	@62
 				    location   	(1083, 225)
 				    fill_color 	13434879
 				    anchor_loc 	1
@@ -1620,26 +1605,26 @@
 				fill_color 	13434879
 				quidu      	"5DEBC8840193"
 				width      	352
-				height     	2912
+				height     	3183
 				icon_height 	162
 				icon_width 	120
 				icon_y_offset 	0
 				annotation 	1
-				Focus_Of_Control 	(object Focus_Of_Control "" @66
-				    location   	(1083, 539)
+				Focus_Of_Control 	(object Focus_Of_Control "" @63
+				    location   	(1083, 460)
 				    line_color 	3342489
-				    InterObjView 	@65
+				    InterObjView 	@62
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE)
-				Focus_Of_Control 	(object Focus_Of_Control "" @67
-				    location   	(1083, 749)
+				Focus_Of_Control 	(object Focus_Of_Control "" @64
+				    location   	(1083, 689)
 				    line_color 	3342489
-				    InterObjView 	@65
-				    height     	92
-				    y_coord    	2
+				    InterObjView 	@62
+				    height     	90
+				    y_coord    	0
 				    Nested     	FALSE))
-			    (object InterObjView "$UNNAMED$59" @68
+			    (object InterObjView "$UNNAMED$59" @65
 				location   	(1684, 225)
 				font       	(object Font
 				    size       	9
@@ -1651,7 +1636,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@68
+				    Parent_View 	@65
 				    location   	(1684, 225)
 				    fill_color 	13434879
 				    anchor_loc 	1
@@ -1664,90 +1649,104 @@
 				fill_color 	13434879
 				quidu      	"5DEBC8840170"
 				width      	688
-				height     	2912
+				height     	3183
 				icon_height 	162
 				icon_width 	120
 				icon_y_offset 	0
 				annotation 	1
-				Focus_Of_Control 	(object Focus_Of_Control "" @69
-				    location   	(1684, 749)
+				Focus_Of_Control 	(object Focus_Of_Control "" @66
+				    location   	(1684, 689)
 				    line_color 	3342489
-				    InterObjView 	@68
+				    InterObjView 	@65
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @67
+				    location   	(1684, 890)
+				    line_color 	3342489
+				    InterObjView 	@65
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @68
+				    location   	(1684, 1022)
+				    line_color 	3342489
+				    InterObjView 	@65
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @69
+				    location   	(1684, 1250)
+				    line_color 	3342489
+				    InterObjView 	@65
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE)
 				Focus_Of_Control 	(object Focus_Of_Control "" @70
-				    location   	(1684, 982)
+				    location   	(1684, 1275)
 				    line_color 	3342489
-				    InterObjView 	@68
+				    InterObjView 	@65
 				    height     	90
 				    y_coord    	0
-				    Nested     	FALSE)
+				    Nested     	TRUE)
 				Focus_Of_Control 	(object Focus_Of_Control "" @71
-				    location   	(1684, 1190)
+				    location   	(1684, 1465)
 				    line_color 	3342489
-				    InterObjView 	@68
+				    InterObjView 	@65
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE)
 				Focus_Of_Control 	(object Focus_Of_Control "" @72
-				    location   	(1684, 1382)
+				    location   	(1684, 1641)
 				    line_color 	3342489
-				    InterObjView 	@68
+				    InterObjView 	@65
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE)
 				Focus_Of_Control 	(object Focus_Of_Control "" @73
-				    location   	(1684, 1574)
+				    location   	(1684, 1821)
 				    line_color 	3342489
-				    InterObjView 	@68
+				    InterObjView 	@65
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE)
 				Focus_Of_Control 	(object Focus_Of_Control "" @74
-				    location   	(1684, 1599)
+				    location   	(1684, 2048)
 				    line_color 	3342489
-				    InterObjView 	@68
+				    InterObjView 	@65
 				    height     	90
 				    y_coord    	0
-				    Nested     	TRUE)
+				    Nested     	FALSE)
 				Focus_Of_Control 	(object Focus_Of_Control "" @75
-				    location   	(1684, 1798)
+				    location   	(1684, 2923)
 				    line_color 	3342489
-				    InterObjView 	@68
+				    InterObjView 	@65
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE)
 				Focus_Of_Control 	(object Focus_Of_Control "" @76
-				    location   	(1684, 1990)
+				    location   	(1684, 3066)
 				    line_color 	3342489
-				    InterObjView 	@68
+				    InterObjView 	@65
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE)
 				Focus_Of_Control 	(object Focus_Of_Control "" @77
-				    location   	(1684, 2166)
+				    location   	(1684, 3091)
 				    line_color 	3342489
-				    InterObjView 	@68
+				    InterObjView 	@65
 				    height     	90
 				    y_coord    	0
-				    Nested     	FALSE)
+				    Nested     	TRUE)
 				Focus_Of_Control 	(object Focus_Of_Control "" @78
-				    location   	(1684, 2932)
+				    location   	(1684, 3228)
 				    line_color 	3342489
-				    InterObjView 	@68
+				    InterObjView 	@65
 				    height     	90
 				    y_coord    	0
-				    Nested     	FALSE)
-				Focus_Of_Control 	(object Focus_Of_Control "" @79
-				    location   	(1684, 2957)
-				    line_color 	3342489
-				    InterObjView 	@68
-				    height     	90
-				    y_coord    	0
-				    Nested     	TRUE))
-			    (object InterObjView "$UNNAMED$60" @80
-				location   	(2575, 225)
+				    Nested     	FALSE))
+			    (object InterObjView "$UNNAMED$61" @79
+				location   	(2434, 225)
 				font       	(object Font
 				    size       	9
 				    face       	"Arial"
@@ -1758,54 +1757,61 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@80
-				    location   	(2575, 225)
+				    Parent_View 	@79
+				    location   	(2434, 225)
 				    fill_color 	13434879
 				    anchor_loc 	1
 				    nlines     	2
-				    max_width  	956
+				    max_width  	538
 				    justify    	0
 				    label      	"")
 				icon_style 	"Icon"
 				line_color 	3342489
 				fill_color 	13434879
-				quidu      	"5DEBC8840180"
-				width      	974
-				height     	2912
+				quidu      	"5DEBC8840188"
+				width      	556
+				height     	3183
 				icon_height 	0
 				icon_width 	0
 				icon_y_offset 	0
 				annotation 	1
-				Focus_Of_Control 	(object Focus_Of_Control "" @81
-				    location   	(2575, 2166)
+				Focus_Of_Control 	(object Focus_Of_Control "" @80
+				    location   	(2434, 2048)
 				    line_color 	3342489
-				    InterObjView 	@80
+				    InterObjView 	@79
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @81
+				    location   	(2434, 2263)
+				    line_color 	3342489
+				    InterObjView 	@79
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE)
 				Focus_Of_Control 	(object Focus_Of_Control "" @82
-				    location   	(2575, 2342)
+				    location   	(2434, 2439)
 				    line_color 	3342489
-				    InterObjView 	@80
+				    InterObjView 	@79
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE)
 				Focus_Of_Control 	(object Focus_Of_Control "" @83
-				    location   	(2575, 2502)
+				    location   	(2434, 2625)
 				    line_color 	3342489
-				    InterObjView 	@80
+				    InterObjView 	@79
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE)
 				Focus_Of_Control 	(object Focus_Of_Control "" @84
-				    location   	(2575, 2624)
+				    location   	(2434, 2764)
 				    line_color 	3342489
-				    InterObjView 	@80
-				    height     	95
-				    y_coord    	5
+				    InterObjView 	@79
+				    height     	90
+				    y_coord    	0
 				    Nested     	FALSE))
 			    (object InterObjView "$UNNAMED$62" @85
-				location   	(3343, 225)
+				location   	(2832, 272)
 				font       	(object Font
 				    size       	9
 				    face       	"Arial"
@@ -1817,51 +1823,7 @@
 				    default_color 	TRUE)
 				label      	(object ItemLabel
 				    Parent_View 	@85
-				    location   	(3343, 225)
-				    fill_color 	13434879
-				    anchor_loc 	1
-				    nlines     	2
-				    max_width  	416
-				    justify    	0
-				    label      	"")
-				icon_style 	"Icon"
-				line_color 	3342489
-				fill_color 	13434879
-				quidu      	"5DEBC8840188"
-				width      	434
-				height     	2912
-				icon_height 	0
-				icon_width 	0
-				icon_y_offset 	0
-				annotation 	1
-				Focus_Of_Control 	(object Focus_Of_Control "" @86
-				    location   	(3343, 2624)
-				    line_color 	3342489
-				    InterObjView 	@85
-				    height     	90
-				    y_coord    	0
-				    Nested     	FALSE)
-				Focus_Of_Control 	(object Focus_Of_Control "" @87
-				    location   	(3343, 2827)
-				    line_color 	3342489
-				    InterObjView 	@85
-				    height     	90
-				    y_coord    	0
-				    Nested     	FALSE))
-			    (object InterObjView "$UNNAMED$63" @88
-				location   	(3761, 272)
-				font       	(object Font
-				    size       	9
-				    face       	"Arial"
-				    bold       	FALSE
-				    italics    	FALSE
-				    underline  	TRUE
-				    strike     	FALSE
-				    color      	0
-				    default_color 	TRUE)
-				label      	(object ItemLabel
-				    Parent_View 	@88
-				    location   	(3761, 295)
+				    location   	(2832, 295)
 				    anchor_loc 	1
 				    nlines     	2
 				    max_width  	360
@@ -1873,20 +1835,62 @@
 				fill_color 	13434879
 				quidu      	"5DEBC884018E"
 				width      	120
-				height     	2865
+				height     	3136
 				icon_height 	162
 				icon_width 	120
 				icon_y_offset 	0
 				annotation 	1
-				Focus_Of_Control 	(object Focus_Of_Control "" @89
-				    location   	(3761, 2827)
+				Focus_Of_Control 	(object Focus_Of_Control "" @86
+				    location   	(2832, 890)
 				    line_color 	3342489
-				    InterObjView 	@88
+				    InterObjView 	@85
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @87
+				    location   	(2832, 1022)
+				    line_color 	3342489
+				    InterObjView 	@85
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @88
+				    location   	(2832, 2263)
+				    line_color 	3342489
+				    InterObjView 	@85
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @89
+				    location   	(2832, 2439)
+				    line_color 	3342489
+				    InterObjView 	@85
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @90
+				    location   	(2832, 2625)
+				    line_color 	3342489
+				    InterObjView 	@85
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @91
+				    location   	(2832, 2764)
+				    line_color 	3342489
+				    InterObjView 	@85
+				    height     	90
+				    y_coord    	0
+				    Nested     	FALSE)
+				Focus_Of_Control 	(object Focus_Of_Control "" @92
+				    location   	(2832, 2923)
+				    line_color 	3342489
+				    InterObjView 	@85
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE))
-			    (object InterMessView "Bira Region" @90
-				location   	(16, 982)
+			    (object InterMessView "Bira Tip posla" @93
+				location   	(16, 1465)
 				font       	(object Font
 				    size       	9
 				    face       	"Arial"
@@ -1896,9 +1900,9 @@
 				    strike     	FALSE
 				    color      	0
 				    default_color 	TRUE)
-				label      	(object SegLabel @91
-				    Parent_View 	@90
-				    location   	(1127, 938)
+				label      	(object SegLabel @94
+				    Parent_View 	@93
+				    location   	(1127, 1421)
 				    font       	(object Font
 					size       	9
 					face       	"Arial"
@@ -1911,22 +1915,22 @@
 				    quidu      	"5DEBC884015B"
 				    anchor_loc 	1
 				    nlines     	1
-				    max_width  	207
+				    max_width  	243
 				    justify    	0
-				    label      	"Bira Region"
+				    label      	"Bira Tip posla"
 				    pctDist    	0.500000
 				    height     	45
 				    orientation 	0)
 				line_color 	3342489
 				client     	@56
-				supplier   	@68
+				supplier   	@65
 				Focus_Src  	@58
-				Focus_Entry 	@70
-				origin     	(586, 982)
-				terminus   	(1668, 982)
-				ordinal    	2)
-			    (object InterMessView "Bira vremenski period" @92
-				location   	(16, 1190)
+				Focus_Entry 	@71
+				origin     	(586, 1465)
+				terminus   	(1668, 1465)
+				ordinal    	5)
+			    (object InterMessView "Cekira odradjene poslove" @95
+				location   	(16, 1641)
 				font       	(object Font
 				    size       	9
 				    face       	"Arial"
@@ -1936,9 +1940,9 @@
 				    strike     	FALSE
 				    color      	0
 				    default_color 	TRUE)
-				label      	(object SegLabel @93
-				    Parent_View 	@92
-				    location   	(1127, 1146)
+				label      	(object SegLabel @96
+				    Parent_View 	@95
+				    location   	(1127, 1597)
 				    font       	(object Font
 					size       	9
 					face       	"Arial"
@@ -1951,22 +1955,22 @@
 				    quidu      	"5DEBC884015D"
 				    anchor_loc 	1
 				    nlines     	1
-				    max_width  	372
+				    max_width  	457
 				    justify    	0
-				    label      	"Bira vremenski period"
+				    label      	"Cekira odradjene poslove"
 				    pctDist    	0.500000
 				    height     	45
 				    orientation 	0)
 				line_color 	3342489
 				client     	@56
-				supplier   	@68
+				supplier   	@65
 				Focus_Src  	@59
-				Focus_Entry 	@71
-				origin     	(586, 1190)
-				terminus   	(1668, 1190)
-				ordinal    	3)
-			    (object SelfMessView "PrikaziPoslove()" @94
-				location   	(16, 1574)
+				Focus_Entry 	@72
+				origin     	(586, 1641)
+				terminus   	(1668, 1641)
+				ordinal    	6)
+			    (object SelfMessView "PrikaziPoslove()" @97
+				location   	(16, 1250)
 				font       	(object Font
 				    size       	9
 				    face       	"Arial"
@@ -1976,9 +1980,9 @@
 				    strike     	FALSE
 				    color      	0
 				    default_color 	TRUE)
-				label      	(object SegLabel @95
-				    Parent_View 	@94
-				    location   	(1775, 1530)
+				label      	(object SegLabel @98
+				    Parent_View 	@97
+				    location   	(1786, 1204)
 				    font       	(object Font
 					size       	9
 					face       	"Arial"
@@ -1991,22 +1995,22 @@
 				    quidu      	"5DEBC8840172"
 				    anchor_loc 	1
 				    nlines     	1
-				    max_width  	276
+				    max_width  	283
 				    justify    	0
 				    label      	"PrikaziPoslove()"
-				    pctDist    	0.500000
-				    height     	45
+				    pctDist    	0.580000
+				    height     	47
 				    orientation 	0)
 				line_color 	3342489
-				client     	@68
-				supplier   	@68
-				Focus_Src  	@73
-				Focus_Entry 	@74
-				origin     	(1700, 1574)
-				terminus   	(1850, 1574)
-				ordinal    	5)
-			    (object InterMessView "Menja podatke" @96
-				location   	(16, 2342)
+				client     	@65
+				supplier   	@65
+				Focus_Src  	@69
+				Focus_Entry 	@70
+				origin     	(1700, 1250)
+				terminus   	(1850, 1250)
+				ordinal    	4)
+			    (object InterMessView "Potvrdi()" @99
+				location   	(16, 1821)
 				font       	(object Font
 				    size       	9
 				    face       	"Arial"
@@ -2016,49 +2020,9 @@
 				    strike     	FALSE
 				    color      	0
 				    default_color 	TRUE)
-				label      	(object SegLabel @97
-				    Parent_View 	@96
-				    location   	(1572, 2298)
-				    font       	(object Font
-					size       	9
-					face       	"Arial"
-					bold       	FALSE
-					italics    	FALSE
-					underline  	FALSE
-					strike     	FALSE
-					color      	0
-					default_color 	TRUE)
-				    quidu      	"5DEBC8840166"
-				    anchor_loc 	1
-				    nlines     	1
-				    max_width  	251
-				    justify    	0
-				    label      	"Menja podatke"
-				    pctDist    	0.500000
-				    height     	45
-				    orientation 	0)
-				line_color 	3342489
-				client     	@56
-				supplier   	@80
-				Focus_Src  	@63
-				Focus_Entry 	@82
-				origin     	(586, 2342)
-				terminus   	(2559, 2342)
-				ordinal    	9)
-			    (object InterMessView "Potvrdi()" @98
-				location   	(16, 1382)
-				font       	(object Font
-				    size       	9
-				    face       	"Arial"
-				    bold       	FALSE
-				    italics    	FALSE
-				    underline  	FALSE
-				    strike     	FALSE
-				    color      	0
-				    default_color 	TRUE)
-				label      	(object SegLabel @99
-				    Parent_View 	@98
-				    location   	(1127, 1338)
+				label      	(object SegLabel @100
+				    Parent_View 	@99
+				    location   	(1127, 1777)
 				    font       	(object Font
 					size       	9
 					face       	"Arial"
@@ -2071,7 +2035,7 @@
 				    quidu      	"5DEBC884015F"
 				    anchor_loc 	1
 				    nlines     	1
-				    max_width  	144
+				    max_width  	148
 				    justify    	0
 				    label      	"Potvrdi()"
 				    pctDist    	0.500000
@@ -2079,94 +2043,14 @@
 				    orientation 	0)
 				line_color 	3342489
 				client     	@56
-				supplier   	@68
+				supplier   	@65
 				Focus_Src  	@60
-				Focus_Entry 	@72
-				origin     	(586, 1382)
-				terminus   	(1668, 1382)
-				ordinal    	4)
-			    (object InterMessView "Bira arhivirani posao za izmenu" @100
-				location   	(16, 1798)
-				font       	(object Font
-				    size       	9
-				    face       	"Arial"
-				    bold       	FALSE
-				    italics    	FALSE
-				    underline  	FALSE
-				    strike     	FALSE
-				    color      	0
-				    default_color 	TRUE)
-				label      	(object SegLabel @101
-				    Parent_View 	@100
-				    location   	(1127, 1754)
-				    font       	(object Font
-					size       	9
-					face       	"Arial"
-					bold       	FALSE
-					italics    	FALSE
-					underline  	FALSE
-					strike     	FALSE
-					color      	0
-					default_color 	TRUE)
-				    quidu      	"5DEBC8840161"
-				    anchor_loc 	1
-				    nlines     	1
-				    max_width  	525
-				    justify    	0
-				    label      	"Bira arhivirani posao za izmenu"
-				    pctDist    	0.500000
-				    height     	45
-				    orientation 	0)
-				line_color 	3342489
-				client     	@56
-				supplier   	@68
-				Focus_Src  	@61
-				Focus_Entry 	@75
-				origin     	(586, 1798)
-				terminus   	(1668, 1798)
-				ordinal    	6)
-			    (object InterMessView "Izmeni()" @102
-				location   	(16, 1990)
-				font       	(object Font
-				    size       	9
-				    face       	"Arial"
-				    bold       	FALSE
-				    italics    	FALSE
-				    underline  	FALSE
-				    strike     	FALSE
-				    color      	0
-				    default_color 	TRUE)
-				label      	(object SegLabel @103
-				    Parent_View 	@102
-				    location   	(1127, 1946)
-				    font       	(object Font
-					size       	9
-					face       	"Arial"
-					bold       	FALSE
-					italics    	FALSE
-					underline  	FALSE
-					strike     	FALSE
-					color      	0
-					default_color 	TRUE)
-				    quidu      	"5DEBC8840163"
-				    anchor_loc 	1
-				    nlines     	1
-				    max_width  	144
-				    justify    	0
-				    label      	"Izmeni()"
-				    pctDist    	0.500000
-				    height     	45
-				    orientation 	0)
-				line_color 	3342489
-				client     	@56
-				supplier   	@68
-				Focus_Src  	@62
-				Focus_Entry 	@76
-				origin     	(586, 1990)
-				terminus   	(1668, 1990)
+				Focus_Entry 	@73
+				origin     	(586, 1821)
+				terminus   	(1668, 1821)
 				ordinal    	7)
-			    (object InterMessView "<show>" @104
-				location   	(16, 2166)
+			    (object InterMessView "Bira opciju Lista" @101
+				location   	(16, 460)
 				font       	(object Font
 				    size       	9
 				    face       	"Arial"
@@ -2176,49 +2060,9 @@
 				    strike     	FALSE
 				    color      	0
 				    default_color 	TRUE)
-				label      	(object SegLabel @105
-				    Parent_View 	@104
-				    location   	(2129, 2122)
-				    font       	(object Font
-					size       	9
-					face       	"Arial"
-					bold       	FALSE
-					italics    	FALSE
-					underline  	FALSE
-					strike     	FALSE
-					color      	0
-					default_color 	TRUE)
-				    quidu      	"5DEBC8840177"
-				    anchor_loc 	1
-				    nlines     	1
-				    max_width  	144
-				    justify    	0
-				    label      	"<show>"
-				    pctDist    	0.500000
-				    height     	45
-				    orientation 	0)
-				line_color 	3342489
-				client     	@68
-				supplier   	@80
-				Focus_Src  	@77
-				Focus_Entry 	@81
-				origin     	(1699, 2166)
-				terminus   	(2559, 2166)
-				ordinal    	8)
-			    (object InterMessView "Bira opciju Lista" @106
-				location   	(16, 539)
-				font       	(object Font
-				    size       	9
-				    face       	"Arial"
-				    bold       	FALSE
-				    italics    	FALSE
-				    underline  	FALSE
-				    strike     	FALSE
-				    color      	0
-				    default_color 	TRUE)
-				label      	(object SegLabel @107
-				    Parent_View 	@106
-				    location   	(826, 495)
+				label      	(object SegLabel @102
+				    Parent_View 	@101
+				    location   	(826, 416)
 				    font       	(object Font
 					size       	9
 					face       	"Arial"
@@ -2231,7 +2075,7 @@
 				    quidu      	"5DEBC884016B"
 				    anchor_loc 	1
 				    nlines     	1
-				    max_width  	276
+				    max_width  	283
 				    justify    	0
 				    label      	"Bira opciju Lista"
 				    pctDist    	0.500000
@@ -2239,14 +2083,14 @@
 				    orientation 	0)
 				line_color 	3342489
 				client     	@56
-				supplier   	@65
+				supplier   	@62
 				Focus_Src  	@57
-				Focus_Entry 	@66
-				origin     	(586, 539)
-				terminus   	(1067, 539)
+				Focus_Entry 	@63
+				origin     	(586, 460)
+				terminus   	(1067, 460)
 				ordinal    	0)
-			    (object InterMessView "Potvrdi()" @108
-				location   	(16, 2502)
+			    (object InterMessView "Update(...)" @103
+				location   	(16, 2764)
 				font       	(object Font
 				    size       	9
 				    face       	"Arial"
@@ -2256,89 +2100,9 @@
 				    strike     	FALSE
 				    color      	0
 				    default_color 	TRUE)
-				label      	(object SegLabel @109
-				    Parent_View 	@108
-				    location   	(1572, 2458)
-				    font       	(object Font
-					size       	9
-					face       	"Arial"
-					bold       	FALSE
-					italics    	FALSE
-					underline  	FALSE
-					strike     	FALSE
-					color      	0
-					default_color 	TRUE)
-				    quidu      	"5DEBC8840168"
-				    anchor_loc 	1
-				    nlines     	1
-				    max_width  	144
-				    justify    	0
-				    label      	"Potvrdi()"
-				    pctDist    	0.500000
-				    height     	45
-				    orientation 	0)
-				line_color 	3342489
-				client     	@56
-				supplier   	@80
-				Focus_Src  	@64
-				Focus_Entry 	@83
-				origin     	(586, 2502)
-				terminus   	(2559, 2502)
-				ordinal    	10)
-			    (object InterMessView "Save(...)" @110
-				location   	(16, 2624)
-				font       	(object Font
-				    size       	9
-				    face       	"Arial"
-				    bold       	FALSE
-				    italics    	FALSE
-				    underline  	FALSE
-				    strike     	FALSE
-				    color      	0
-				    default_color 	TRUE)
-				label      	(object SegLabel @111
-				    Parent_View 	@110
-				    location   	(2958, 2580)
-				    font       	(object Font
-					size       	9
-					face       	"Arial"
-					bold       	FALSE
-					italics    	FALSE
-					underline  	FALSE
-					strike     	FALSE
-					color      	0
-					default_color 	TRUE)
-				    quidu      	"5DEBC8840182"
-				    anchor_loc 	1
-				    nlines     	1
-				    max_width  	141
-				    justify    	0
-				    label      	"Save(...)"
-				    pctDist    	0.500000
-				    height     	45
-				    orientation 	0)
-				line_color 	3342489
-				client     	@80
-				supplier   	@85
-				Focus_Src  	@84
-				Focus_Entry 	@86
-				origin     	(2590, 2624)
-				terminus   	(3327, 2624)
-				ordinal    	11)
-			    (object InterMessView "Update(...)" @112
-				location   	(16, 2827)
-				font       	(object Font
-				    size       	9
-				    face       	"Arial"
-				    bold       	FALSE
-				    italics    	FALSE
-				    underline  	FALSE
-				    strike     	FALSE
-				    color      	0
-				    default_color 	TRUE)
-				label      	(object SegLabel @113
-				    Parent_View 	@112
-				    location   	(3551, 2783)
+				label      	(object SegLabel @104
+				    Parent_View 	@103
+				    location   	(2624, 2721)
 				    font       	(object Font
 					size       	9
 					face       	"Arial"
@@ -2351,22 +2115,22 @@
 				    quidu      	"5DEBC884018A"
 				    anchor_loc 	1
 				    nlines     	1
-				    max_width  	182
+				    max_width  	186
 				    justify    	0
 				    label      	"Update(...)"
-				    pctDist    	0.500000
-				    height     	45
+				    pctDist    	0.476839
+				    height     	44
 				    orientation 	0)
 				line_color 	3342489
-				client     	@85
-				supplier   	@88
-				Focus_Src  	@87
-				Focus_Entry 	@89
-				origin     	(3358, 2827)
-				terminus   	(3745, 2827)
+				client     	@79
+				supplier   	@85
+				Focus_Src  	@84
+				Focus_Entry 	@91
+				origin     	(2449, 2764)
+				terminus   	(2816, 2764)
 				ordinal    	12)
-			    (object SelfMessView "<refresh>" @114
-				location   	(16, 2932)
+			    (object InterMessView "<show>" @105
+				location   	(16, 689)
 				font       	(object Font
 				    size       	9
 				    face       	"Arial"
@@ -2376,49 +2140,9 @@
 				    strike     	FALSE
 				    color      	0
 				    default_color 	TRUE)
-				label      	(object SegLabel @115
-				    Parent_View 	@114
-				    location   	(1775, 2888)
-				    font       	(object Font
-					size       	9
-					face       	"Arial"
-					bold       	FALSE
-					italics    	FALSE
-					underline  	FALSE
-					strike     	FALSE
-					color      	0
-					default_color 	TRUE)
-				    quidu      	"5DEBC8840174"
-				    anchor_loc 	1
-				    nlines     	1
-				    max_width  	169
-				    justify    	0
-				    label      	"<refresh>"
-				    pctDist    	0.500000
-				    height     	45
-				    orientation 	0)
-				line_color 	3342489
-				client     	@68
-				supplier   	@68
-				Focus_Src  	@78
-				Focus_Entry 	@79
-				origin     	(1700, 2932)
-				terminus   	(1850, 2932)
-				ordinal    	13)
-			    (object InterMessView "<show>" @116
-				location   	(16, 749)
-				font       	(object Font
-				    size       	9
-				    face       	"Arial"
-				    bold       	FALSE
-				    italics    	FALSE
-				    underline  	FALSE
-				    strike     	FALSE
-				    color      	0
-				    default_color 	TRUE)
-				label      	(object SegLabel @117
-				    Parent_View 	@116
-				    location   	(1383, 705)
+				label      	(object SegLabel @106
+				    Parent_View 	@105
+				    location   	(1383, 645)
 				    font       	(object Font
 					size       	9
 					face       	"Arial"
@@ -2431,20 +2155,380 @@
 				    quidu      	"5DEBC8840191"
 				    anchor_loc 	1
 				    nlines     	1
-				    max_width  	144
+				    max_width  	146
 				    justify    	0
 				    label      	"<show>"
 				    pctDist    	0.500000
 				    height     	45
 				    orientation 	0)
 				line_color 	3342489
+				client     	@62
+				supplier   	@65
+				Focus_Src  	@64
+				Focus_Entry 	@66
+				origin     	(1098, 689)
+				terminus   	(1668, 689)
+				ordinal    	1)
+			    (object InterMessView "Salje ime ulice i tip evidentiranog posla" @107
+				location   	(0, 2048)
+				font       	(object Font
+				    size       	9
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @108
+				    Parent_View 	@107
+				    location   	(2058, 2004)
+				    font       	(object Font
+					size       	9
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5DFEBB3E0254"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	692
+				    justify    	0
+				    label      	"Salje ime ulice i tip evidentiranog posla"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	0)
+				line_color 	3342489
 				client     	@65
-				supplier   	@68
+				supplier   	@79
+				Focus_Src  	@74
+				Focus_Entry 	@80
+				origin     	(1699, 2048)
+				terminus   	(2418, 2048)
+				ordinal    	8)
+			    (object InterMessView "Salje moguce poslove" @109
+				location   	(0, 1022)
+				font       	(object Font
+				    size       	9
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @110
+				    Parent_View 	@109
+				    location   	(2258, 978)
+				    font       	(object Font
+					size       	9
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5DFEBBB30004"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	395
+				    justify    	0
+				    label      	"Salje moguce poslove"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	1)
+				line_color 	3342489
+				client     	@85
+				supplier   	@65
+				Focus_Src  	@87
+				Focus_Entry 	@68
+				origin     	(2816, 1022)
+				terminus   	(1700, 1022)
+				ordinal    	3)
+			    (object InterMessView "Upisuje ime ulice, tip posla i vreme evidencije u Arhivu" @111
+				location   	(0, 2263)
+				font       	(object Font
+				    size       	9
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @112
+				    Parent_View 	@111
+				    location   	(2632, 2219)
+				    font       	(object Font
+					size       	9
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5DFEBBFE0138"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	951
+				    justify    	0
+				    label      	"Upisuje ime ulice, tip posla i vreme evidencije u Arhivu"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	0)
+				line_color 	3342489
+				client     	@79
+				supplier   	@85
+				Focus_Src  	@81
+				Focus_Entry 	@88
+				origin     	(2449, 2263)
+				terminus   	(2816, 2263)
+				ordinal    	9)
+			    (object InterMessView "Menja atribut Moguceg posla Izvrsen sa 0 na 1" @113
+				location   	(0, 2625)
+				font       	(object Font
+				    size       	9
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @114
+				    Parent_View 	@113
+				    location   	(2634, 2594)
+				    font       	(object Font
+					size       	9
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5DFEBC65029C"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	813
+				    justify    	0
+				    label      	"Menja atribut Moguceg posla Izvrsen sa 0 na 1"
+				    pctDist    	0.506812
+				    height     	32
+				    orientation 	0)
+				line_color 	3342489
+				client     	@79
+				supplier   	@85
+				Focus_Src  	@83
+				Focus_Entry 	@90
+				origin     	(2449, 2625)
+				terminus   	(2816, 2625)
+				ordinal    	11)
+			    (object InterMessView "Obavestava da taj posao vise nije moguc" @115
+				location   	(0, 2923)
+				font       	(object Font
+				    size       	9
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @116
+				    Parent_View 	@115
+				    location   	(2258, 2879)
+				    font       	(object Font
+					size       	9
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5DFEBCB903AF"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	727
+				    justify    	0
+				    label      	"Obavestava da taj posao vise nije moguc"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	1)
+				line_color 	3342489
+				client     	@85
+				supplier   	@65
+				Focus_Src  	@92
+				Focus_Entry 	@75
+				origin     	(2816, 2923)
+				terminus   	(1700, 2923)
+				ordinal    	13)
+			    (object InterMessView "Save()" @117
+				location   	(0, 2439)
+				font       	(object Font
+				    size       	9
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @118
+				    Parent_View 	@117
+				    location   	(2632, 2395)
+				    font       	(object Font
+					size       	9
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5DFEBD1901BF"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	116
+				    justify    	0
+				    label      	"Save()"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	0)
+				line_color 	3342489
+				client     	@79
+				supplier   	@85
+				Focus_Src  	@82
+				Focus_Entry 	@89
+				origin     	(2449, 2439)
+				terminus   	(2816, 2439)
+				ordinal    	10)
+			    (object InterMessView "Uzima moguce poslove" @119
+				location   	(0, 890)
+				font       	(object Font
+				    size       	9
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @120
+				    Parent_View 	@119
+				    location   	(2257, 846)
+				    font       	(object Font
+					size       	9
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5DFEBD390048"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	418
+				    justify    	0
+				    label      	"Uzima moguce poslove"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	0)
+				line_color 	3342489
+				client     	@65
+				supplier   	@85
 				Focus_Src  	@67
-				Focus_Entry 	@69
-				origin     	(1098, 749)
-				terminus   	(1668, 749)
-				ordinal    	1)))))
+				Focus_Entry 	@86
+				origin     	(1699, 890)
+				terminus   	(2816, 890)
+				ordinal    	2)
+			    (object SelfMessView "Sklanja posao iz liste" @121
+				location   	(0, 3066)
+				font       	(object Font
+				    size       	9
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @122
+				    Parent_View 	@121
+				    location   	(1775, 3022)
+				    font       	(object Font
+					size       	9
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5DFEBD5703B2"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	372
+				    justify    	0
+				    label      	"Sklanja posao iz liste"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	0)
+				line_color 	3342489
+				client     	@65
+				supplier   	@65
+				Focus_Src  	@76
+				Focus_Entry 	@77
+				origin     	(1700, 3066)
+				terminus   	(1850, 3066)
+				ordinal    	14)
+			    (object InterMessView "Show()" @123
+				location   	(0, 3228)
+				font       	(object Font
+				    size       	9
+				    face       	"Arial"
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @124
+				    Parent_View 	@123
+				    location   	(1128, 3184)
+				    font       	(object Font
+					size       	9
+					face       	"Arial"
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    quidu      	"5DFEBD6D0161"
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	129
+				    justify    	0
+				    label      	"Show()"
+				    pctDist    	0.500000
+				    height     	45
+				    orientation 	1)
+				line_color 	3342489
+				client     	@65
+				supplier   	@56
+				Focus_Src  	@78
+				Focus_Entry 	@61
+				origin     	(1668, 3228)
+				terminus   	(587, 3228)
+				ordinal    	15)))))
 	    (object Class_Category "Kreiranje i brisanje kor. naloga"
 		quid       	"5DEBD420036A"
 		exportControl 	"Public"
@@ -2457,39 +2541,39 @@
 			quid       	"5DEBD4410375")
 		    (object UseCase "Izmena korisnickog naloga"
 			quid       	"5DFE9972037D")
-		    (object Association "$UNNAMED$64"
+		    (object Association "$UNNAMED$63"
 			quid       	"5DEBD45300A1"
 			roles      	(list role_list
-			    (object Role "$UNNAMED$65"
+			    (object Role "$UNNAMED$64"
 				quid       	"5DEBD45302C6"
 				supplier   	"Use Case View::Kreiranje i brisanje kor. naloga::Kreiranje naloga"
 				quidu      	"5DEBD4410367"
 				is_navigable 	TRUE)
-			    (object Role "$UNNAMED$66"
+			    (object Role "$UNNAMED$65"
 				quid       	"5DEBD45302C8"
 				supplier   	"Use Case View::Kreiranje i brisanje kor. naloga::Kreiranje, izmena i brisanje korisnickih naloga"
 				quidu      	"5DEBD441036E")))
-		    (object Association "$UNNAMED$67"
+		    (object Association "$UNNAMED$66"
 			quid       	"5DEBD4550353"
 			roles      	(list role_list
-			    (object Role "$UNNAMED$68"
+			    (object Role "$UNNAMED$67"
 				quid       	"5DEBD456013E"
 				supplier   	"Use Case View::Kreiranje i brisanje kor. naloga::Brisanje naloga"
 				quidu      	"5DEBD4410375"
 				is_navigable 	TRUE)
-			    (object Role "$UNNAMED$69"
+			    (object Role "$UNNAMED$68"
 				quid       	"5DEBD4560140"
 				supplier   	"Use Case View::Kreiranje i brisanje kor. naloga::Kreiranje, izmena i brisanje korisnickih naloga"
 				quidu      	"5DEBD441036E")))
-		    (object Association "$UNNAMED$70"
+		    (object Association "$UNNAMED$69"
 			quid       	"5DFE99B102B3"
 			roles      	(list role_list
-			    (object Role "$UNNAMED$71"
+			    (object Role "$UNNAMED$70"
 				quid       	"5DFE99B200CE"
 				supplier   	"Use Case View::Kreiranje i brisanje kor. naloga::Izmena korisnickog naloga"
 				quidu      	"5DFE9972037D"
 				is_navigable 	TRUE)
-			    (object Role "$UNNAMED$72"
+			    (object Role "$UNNAMED$71"
 				quid       	"5DFE99B200D0"
 				supplier   	"Use Case View::Kreiranje i brisanje kor. naloga::Kreiranje, izmena i brisanje korisnickih naloga"
 				quidu      	"5DEBD441036E"))))
@@ -2503,7 +2587,7 @@
 			origin_x   	0
 			origin_y   	134
 			items      	(list diagram_item_list
-			    (object UseCaseView "Use Case View::Kreiranje i brisanje kor. naloga::Kreiranje naloga" @118
+			    (object UseCaseView "Use Case View::Kreiranje i brisanje kor. naloga::Kreiranje naloga" @125
 				location   	(1896, 562)
 				font       	(object Font
 				    size       	12
@@ -2515,7 +2599,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@118
+				    Parent_View 	@125
 				    location   	(1896, 747)
 				    anchor_loc 	1
 				    nlines     	2
@@ -2528,7 +2612,7 @@
 				quidu      	"5DEBD4410367"
 				width      	344
 				height     	212)
-			    (object UseCaseView "Use Case View::Kreiranje i brisanje kor. naloga::Brisanje naloga" @119
+			    (object UseCaseView "Use Case View::Kreiranje i brisanje kor. naloga::Brisanje naloga" @126
 				location   	(1838, 1336)
 				font       	(object Font
 				    size       	12
@@ -2540,7 +2624,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@119
+				    Parent_View 	@126
 				    location   	(1838, 1528)
 				    anchor_loc 	1
 				    nlines     	2
@@ -2553,7 +2637,7 @@
 				quidu      	"5DEBD4410375"
 				width      	375
 				height     	225)
-			    (object UseCaseView "Use Case View::Kreiranje i brisanje kor. naloga::Izmena korisnickog naloga" @120
+			    (object UseCaseView "Use Case View::Kreiranje i brisanje kor. naloga::Izmena korisnickog naloga" @127
 				location   	(1939, 920)
 				font       	(object Font
 				    size       	12
@@ -2565,7 +2649,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@120
+				    Parent_View 	@127
 				    location   	(1939, 1096)
 				    anchor_loc 	1
 				    nlines     	2
@@ -2578,7 +2662,7 @@
 				quidu      	"5DFE9972037D"
 				width      	350
 				height     	194)
-			    (object UseCaseView "Use Case View::Kreiranje i brisanje kor. naloga::Kreiranje, izmena i brisanje korisnickih naloga" @121
+			    (object UseCaseView "Use Case View::Kreiranje i brisanje kor. naloga::Kreiranje, izmena i brisanje korisnickih naloga" @128
 				location   	(1192, 917)
 				font       	(object Font
 				    size       	12
@@ -2590,7 +2674,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@121
+				    Parent_View 	@128
 				    location   	(1192, 1078)
 				    anchor_loc 	1
 				    nlines     	2
@@ -2602,7 +2686,7 @@
 				quidu      	"5DEBD441036E"
 				width      	306
 				height     	163)
-			    (object AssociationViewNew "$UNNAMED$64" @122
+			    (object AssociationViewNew "$UNNAMED$63" @129
 				location   	(1525, 742)
 				font       	(object Font
 				    size       	9
@@ -2617,31 +2701,31 @@
 				line_color 	3342489
 				quidu      	"5DEBD45300A1"
 				roleview_list 	(list RoleViews
-				    (object RoleView "$UNNAMED$65" @123
-					Parent_View 	@122
+				    (object RoleView "$UNNAMED$64" @130
+					Parent_View 	@129
 					location   	(274, -90)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"5DEBD45302C6"
-					client     	@122
-					supplier   	@118
+					client     	@129
+					supplier   	@125
 					vertices   	(list Points
 					    (1525, 742)
 					    (1896, 562))
 					line_style 	0)
-				    (object RoleView "$UNNAMED$66" @124
-					Parent_View 	@122
+				    (object RoleView "$UNNAMED$65" @131
+					Parent_View 	@129
 					location   	(274, -90)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"5DEBD45302C8"
-					client     	@122
-					supplier   	@121
+					client     	@129
+					supplier   	@128
 					vertices   	(list Points
 					    (1525, 742)
 					    (1332, 838))
 					line_style 	0)))
-			    (object AssociationViewNew "$UNNAMED$67" @125
+			    (object AssociationViewNew "$UNNAMED$66" @132
 				location   	(1582, 1168)
 				font       	(object Font
 				    size       	9
@@ -2656,31 +2740,31 @@
 				line_color 	3342489
 				quidu      	"5DEBD4550353"
 				roleview_list 	(list RoleViews
-				    (object RoleView "$UNNAMED$68" @126
-					Parent_View 	@125
+				    (object RoleView "$UNNAMED$67" @133
+					Parent_View 	@132
 					location   	(331, 336)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"5DEBD456013E"
-					client     	@125
-					supplier   	@119
+					client     	@132
+					supplier   	@126
 					vertices   	(list Points
 					    (1582, 1168)
 					    (1677, 1229))
 					line_style 	0)
-				    (object RoleView "$UNNAMED$69" @127
-					Parent_View 	@125
+				    (object RoleView "$UNNAMED$68" @134
+					Parent_View 	@132
 					location   	(331, 336)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"5DEBD4560140"
-					client     	@125
-					supplier   	@121
+					client     	@132
+					supplier   	@128
 					vertices   	(list Points
 					    (1582, 1168)
 					    (1487, 1105))
 					line_style 	0)))
-			    (object AssociationViewNew "$UNNAMED$70" @128
+			    (object AssociationViewNew "$UNNAMED$69" @135
 				location   	(1553, 915)
 				font       	(object Font
 				    size       	9
@@ -2695,26 +2779,26 @@
 				line_color 	3342489
 				quidu      	"5DFE99B102B3"
 				roleview_list 	(list RoleViews
-				    (object RoleView "$UNNAMED$71" @129
-					Parent_View 	@128
+				    (object RoleView "$UNNAMED$70" @136
+					Parent_View 	@135
 					location   	(361, -2)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"5DFE99B200CE"
-					client     	@128
-					supplier   	@120
+					client     	@135
+					supplier   	@127
 					vertices   	(list Points
 					    (1553, 915)
 					    (1768, 913))
 					line_style 	0)
-				    (object RoleView "$UNNAMED$72" @130
-					Parent_View 	@128
+				    (object RoleView "$UNNAMED$71" @137
+					Parent_View 	@135
 					location   	(361, -2)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"5DFE99B200D0"
-					client     	@128
-					supplier   	@121
+					client     	@135
+					supplier   	@128
 					vertices   	(list Points
 					    (1553, 915)
 					    (1340, 914))
@@ -2759,111 +2843,111 @@
 			quid       	"5DFE8F43037A")
 		    (object UseCase "Evidentiranje trenutnih(mogucih) poslova"
 			quid       	"5DFE984C01D7")
-		    (object Association "$UNNAMED$73"
+		    (object Association "$UNNAMED$72"
 			quid       	"5DEBE5EC018A"
 			roles      	(list role_list
-			    (object Role "$UNNAMED$74"
+			    (object Role "$UNNAMED$73"
 				quid       	"5DEBE5EC03A6"
 				supplier   	"Use Case View::KorisniciiFunkcije::Pregled trenutnih(mogucih)  poslova"
 				quidu      	"5DEBE5C000C6"
 				is_navigable 	TRUE)
-			    (object Role "$UNNAMED$75"
+			    (object Role "$UNNAMED$74"
 				quid       	"5DEBE5EC03A8"
 				supplier   	"Use Case View::KorisniciiFunkcije::Radnik"
 				quidu      	"5DEBE5C000CD")))
-		    (object Association "$UNNAMED$76"
+		    (object Association "$UNNAMED$75"
 			quid       	"5DEBE5F20342"
 			roles      	(list role_list
-			    (object Role "$UNNAMED$77"
+			    (object Role "$UNNAMED$76"
 				quid       	"5DEBE5F300D5"
 				supplier   	"Use Case View::KorisniciiFunkcije::Login na racun"
 				quidu      	"5DEBE5C000E0"
 				is_navigable 	TRUE)
-			    (object Role "$UNNAMED$78"
+			    (object Role "$UNNAMED$77"
 				quid       	"5DEBE5F300D7"
 				supplier   	"Use Case View::KorisniciiFunkcije::Clan JKPa"
 				quidu      	"5DEBE5C000D9")))
-		    (object Association "$UNNAMED$79"
+		    (object Association "$UNNAMED$78"
 			quid       	"5DEBE5F50052"
 			roles      	(list role_list
-			    (object Role "$UNNAMED$80"
+			    (object Role "$UNNAMED$79"
 				quid       	"5DEBE5F5019E"
 				supplier   	"Use Case View::KorisniciiFunkcije::Stampanje arhiviranih podataka"
 				quidu      	"5DEBE5C000E8"
 				is_navigable 	TRUE)
-			    (object Role "$UNNAMED$81"
+			    (object Role "$UNNAMED$80"
 				quid       	"5DEBE5F501A0"
 				supplier   	"Use Case View::KorisniciiFunkcije::Clan JKPa"
 				quidu      	"5DEBE5C000D9")))
-		    (object Association "$UNNAMED$82"
+		    (object Association "$UNNAMED$81"
 			quid       	"5DEBE6050012"
 			roles      	(list role_list
-			    (object Role "$UNNAMED$83"
+			    (object Role "$UNNAMED$82"
 				quid       	"5DEBE6050226"
 				supplier   	"Use Case View::KorisniciiFunkcije::Pregled arhiviranih podataka"
 				quidu      	"5DEBE5C00115"
 				is_navigable 	TRUE)
-			    (object Role "$UNNAMED$84"
+			    (object Role "$UNNAMED$83"
 				quid       	"5DEBE6050228"
 				supplier   	"Use Case View::KorisniciiFunkcije::Sef (Nadlezni)"
 				quidu      	"5DEBE5C000FC")))
-		    (object Association "$UNNAMED$85"
+		    (object Association "$UNNAMED$84"
 			quid       	"5DFE65660095"
 			roles      	(list role_list
-			    (object Role "$UNNAMED$86"
+			    (object Role "$UNNAMED$85"
 				quid       	"5DFE65660324"
 				supplier   	"Use Case View::KorisniciiFunkcije::Kreiranje, izmena i brisanje korisnickih naloga"
 				quidu      	"5DFE652A01E3"
 				is_navigable 	TRUE)
-			    (object Role "$UNNAMED$87"
+			    (object Role "$UNNAMED$86"
 				quid       	"5DFE65660326"
 				supplier   	"Use Case View::KorisniciiFunkcije::Sef (Nadlezni)"
 				quidu      	"5DEBE5C000FC")))
-		    (object Association "$UNNAMED$88"
+		    (object Association "$UNNAMED$87"
 			quid       	"5DFE9409036C"
 			roles      	(list role_list
-			    (object Role "$UNNAMED$89"
+			    (object Role "$UNNAMED$88"
 				quid       	"5DFE940B00B1"
 				supplier   	"Use Case View::KorisniciiFunkcije::Stampanje arhiviranih podataka"
 				quidu      	"5DEBE5C000E8"
 				is_navigable 	TRUE)
-			    (object Role "$UNNAMED$90"
+			    (object Role "$UNNAMED$89"
 				quid       	"5DFE940B00B3"
 				supplier   	"Use Case View::KorisniciiFunkcije::Sef (Nadlezni)"
 				quidu      	"5DEBE5C000FC")))
-		    (object Association "$UNNAMED$91"
+		    (object Association "$UNNAMED$90"
 			quid       	"5DFE94B2036D"
 			roles      	(list role_list
-			    (object Role "$UNNAMED$92"
+			    (object Role "$UNNAMED$91"
 				quid       	"5DFE94B301B4"
 				supplier   	"Use Case View::KorisniciiFunkcije::Odjava sa racuna"
 				quidu      	"5DFE8F43037A"
 				is_navigable 	TRUE)
-			    (object Role "$UNNAMED$93"
+			    (object Role "$UNNAMED$92"
 				quid       	"5DFE94B301B6"
 				supplier   	"Use Case View::KorisniciiFunkcije::Clan JKPa"
 				quidu      	"5DEBE5C000D9")))
-		    (object Association "$UNNAMED$94"
+		    (object Association "$UNNAMED$93"
 			quid       	"5DFE94B603DF"
 			roles      	(list role_list
-			    (object Role "$UNNAMED$95"
+			    (object Role "$UNNAMED$94"
 				quid       	"5DFE94B701FC"
 				supplier   	"Use Case View::KorisniciiFunkcije::Pregled trenutnih(mogucih)  poslova"
 				quidu      	"5DEBE5C000C6"
 				is_navigable 	TRUE)
-			    (object Role "$UNNAMED$96"
+			    (object Role "$UNNAMED$95"
 				quid       	"5DFE94B701FE"
 				supplier   	"Use Case View::KorisniciiFunkcije::Clan JKPa"
 				quidu      	"5DEBE5C000D9")))
-		    (object Association "$UNNAMED$97"
+		    (object Association "$UNNAMED$96"
 			quid       	"5DFE98A200D1"
 			roles      	(list role_list
-			    (object Role "$UNNAMED$98"
+			    (object Role "$UNNAMED$97"
 				quid       	"5DFE98A203B8"
 				supplier   	"Use Case View::KorisniciiFunkcije::Evidentiranje trenutnih(mogucih) poslova"
 				quidu      	"5DFE984C01D7"
 				is_navigable 	TRUE)
-			    (object Role "$UNNAMED$99"
+			    (object Role "$UNNAMED$98"
 				quid       	"5DFE98A203BA"
 				supplier   	"Use Case View::KorisniciiFunkcije::Clan JKPa"
 				quidu      	"5DEBE5C000D9"))))
@@ -2877,7 +2961,7 @@
 			origin_x   	713
 			origin_y   	0
 			items      	(list diagram_item_list
-			    (object ClassView "Class" "Use Case View::KorisniciiFunkcije::Radnik" @131
+			    (object ClassView "Class" "Use Case View::KorisniciiFunkcije::Radnik" @138
 				ShowCompartmentStereotypes 	TRUE
 				IncludeAttribute 	TRUE
 				IncludeOperation 	TRUE
@@ -2892,7 +2976,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@131
+				    Parent_View 	@138
 				    location   	(1289, 1595)
 				    anchor_loc 	1
 				    nlines     	2
@@ -2907,7 +2991,7 @@
 				height     	438
 				annotation 	8
 				autoResize 	TRUE)
-			    (object UseCaseView "Use Case View::KorisniciiFunkcije::Pregled arhiviranih podataka" @132
+			    (object UseCaseView "Use Case View::KorisniciiFunkcije::Pregled arhiviranih podataka" @139
 				location   	(3002, 1487)
 				font       	(object Font
 				    size       	12
@@ -2919,7 +3003,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@132
+				    Parent_View 	@139
 				    location   	(3002, 1671)
 				    anchor_loc 	1
 				    nlines     	2
@@ -2932,7 +3016,7 @@
 				quidu      	"5DEBE5C00115"
 				width      	384
 				height     	210)
-			    (object UseCaseView "Use Case View::KorisniciiFunkcije::Kreiranje, izmena i brisanje korisnickih naloga" @133
+			    (object UseCaseView "Use Case View::KorisniciiFunkcije::Kreiranje, izmena i brisanje korisnickih naloga" @140
 				location   	(3100, 1028)
 				font       	(object Font
 				    size       	12
@@ -2944,7 +3028,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@133
+				    Parent_View 	@140
 				    location   	(3100, 1213)
 				    anchor_loc 	1
 				    nlines     	2
@@ -2957,7 +3041,7 @@
 				quidu      	"5DFE652A01E3"
 				width      	393
 				height     	212)
-			    (object UseCaseView "Use Case View::KorisniciiFunkcije::Stampanje arhiviranih podataka" @134
+			    (object UseCaseView "Use Case View::KorisniciiFunkcije::Stampanje arhiviranih podataka" @141
 				location   	(2803, 614)
 				font       	(object Font
 				    size       	12
@@ -2969,7 +3053,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@134
+				    Parent_View 	@141
 				    location   	(2803, 791)
 				    anchor_loc 	1
 				    nlines     	2
@@ -2982,7 +3066,7 @@
 				quidu      	"5DEBE5C000E8"
 				width      	384
 				height     	196)
-			    (object ClassView "Class" "Use Case View::KorisniciiFunkcije::Sef (Nadlezni)" @135
+			    (object ClassView "Class" "Use Case View::KorisniciiFunkcije::Sef (Nadlezni)" @142
 				ShowCompartmentStereotypes 	TRUE
 				IncludeAttribute 	TRUE
 				IncludeOperation 	TRUE
@@ -2997,7 +3081,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@135
+				    Parent_View 	@142
 				    location   	(2188, 1598)
 				    anchor_loc 	1
 				    nlines     	2
@@ -3012,7 +3096,7 @@
 				height     	475
 				annotation 	8
 				autoResize 	TRUE)
-			    (object AssociationViewNew "$UNNAMED$82" @136
+			    (object AssociationViewNew "$UNNAMED$81" @143
 				location   	(2580, 1375)
 				font       	(object Font
 				    size       	9
@@ -3027,31 +3111,31 @@
 				line_color 	3342489
 				quidu      	"5DEBE6050012"
 				roleview_list 	(list RoleViews
-				    (object RoleView "$UNNAMED$83" @137
-					Parent_View 	@136
+				    (object RoleView "$UNNAMED$82" @144
+					Parent_View 	@143
 					location   	(436, 143)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"5DEBE6050226"
-					client     	@136
-					supplier   	@132
+					client     	@143
+					supplier   	@139
 					vertices   	(list Points
 					    (2580, 1375)
 					    (2814, 1432))
 					line_style 	0)
-				    (object RoleView "$UNNAMED$84" @138
-					Parent_View 	@136
+				    (object RoleView "$UNNAMED$83" @145
+					Parent_View 	@143
 					location   	(436, 143)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"5DEBE6050228"
-					client     	@136
-					supplier   	@135
+					client     	@143
+					supplier   	@142
 					vertices   	(list Points
 					    (2580, 1375)
 					    (2346, 1313))
 					line_style 	0)))
-			    (object AssociationViewNew "$UNNAMED$85" @139
+			    (object AssociationViewNew "$UNNAMED$84" @146
 				location   	(2627, 1155)
 				font       	(object Font
 				    size       	9
@@ -3066,31 +3150,31 @@
 				line_color 	3342489
 				quidu      	"5DFE65660095"
 				roleview_list 	(list RoleViews
-				    (object RoleView "$UNNAMED$86" @140
-					Parent_View 	@139
+				    (object RoleView "$UNNAMED$85" @147
+					Parent_View 	@146
 					location   	(483, -77)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"5DFE65660324"
-					client     	@139
-					supplier   	@133
+					client     	@146
+					supplier   	@140
 					vertices   	(list Points
 					    (2627, 1155)
 					    (2906, 1075))
 					line_style 	0)
-				    (object RoleView "$UNNAMED$87" @141
-					Parent_View 	@139
+				    (object RoleView "$UNNAMED$86" @148
+					Parent_View 	@146
 					location   	(483, -77)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"5DFE65660326"
-					client     	@139
-					supplier   	@135
+					client     	@146
+					supplier   	@142
 					vertices   	(list Points
 					    (2627, 1155)
 					    (2346, 1227))
 					line_style 	0)))
-			    (object AssociationViewNew "$UNNAMED$88" @142
+			    (object AssociationViewNew "$UNNAMED$87" @149
 				location   	(2466, 972)
 				font       	(object Font
 				    size       	9
@@ -3105,31 +3189,31 @@
 				line_color 	3342489
 				quidu      	"5DFE9409036C"
 				roleview_list 	(list RoleViews
-				    (object RoleView "$UNNAMED$89" @143
-					Parent_View 	@142
+				    (object RoleView "$UNNAMED$88" @150
+					Parent_View 	@149
 					location   	(278, -309)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"5DFE940B00B1"
-					client     	@142
-					supplier   	@134
+					client     	@149
+					supplier   	@141
 					vertices   	(list Points
 					    (2466, 972)
 					    (2607, 818))
 					line_style 	0)
-				    (object RoleView "$UNNAMED$90" @144
-					Parent_View 	@142
+				    (object RoleView "$UNNAMED$89" @151
+					Parent_View 	@149
 					location   	(278, -309)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"5DFE940B00B3"
-					client     	@142
-					supplier   	@135
+					client     	@149
+					supplier   	@142
 					vertices   	(list Points
 					    (2466, 972)
 					    (2346, 1089))
 					line_style 	0)))
-			    (object UseCaseView "Use Case View::KorisniciiFunkcije::Login na racun" @145
+			    (object UseCaseView "Use Case View::KorisniciiFunkcije::Login na racun" @152
 				location   	(2356, 272)
 				font       	(object Font
 				    size       	12
@@ -3141,7 +3225,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@145
+				    Parent_View 	@152
 				    location   	(2356, 470)
 				    anchor_loc 	1
 				    nlines     	2
@@ -3154,7 +3238,7 @@
 				quidu      	"5DEBE5C000E0"
 				width      	456
 				height     	237)
-			    (object UseCaseView "Use Case View::KorisniciiFunkcije::Odjava sa racuna" @146
+			    (object UseCaseView "Use Case View::KorisniciiFunkcije::Odjava sa racuna" @153
 				location   	(1822, 194)
 				font       	(object Font
 				    size       	12
@@ -3166,7 +3250,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@146
+				    Parent_View 	@153
 				    location   	(1822, 420)
 				    anchor_loc 	1
 				    nlines     	2
@@ -3179,7 +3263,7 @@
 				quidu      	"5DFE8F43037A"
 				width      	469
 				height     	294)
-			    (object UseCaseView "Use Case View::KorisniciiFunkcije::Pregled trenutnih(mogucih)  poslova" @147
+			    (object UseCaseView "Use Case View::KorisniciiFunkcije::Pregled trenutnih(mogucih)  poslova" @154
 				location   	(1203, 180)
 				font       	(object Font
 				    size       	12
@@ -3191,7 +3275,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@147
+				    Parent_View 	@154
 				    location   	(1203, 394)
 				    anchor_loc 	1
 				    nlines     	2
@@ -3204,7 +3288,7 @@
 				quidu      	"5DEBE5C000C6"
 				width      	456
 				height     	269)
-			    (object UseCaseView "Use Case View::KorisniciiFunkcije::Evidentiranje trenutnih(mogucih) poslova" @148
+			    (object UseCaseView "Use Case View::KorisniciiFunkcije::Evidentiranje trenutnih(mogucih) poslova" @155
 				location   	(858, 570)
 				font       	(object Font
 				    size       	12
@@ -3216,7 +3300,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@148
+				    Parent_View 	@155
 				    location   	(858, 806)
 				    anchor_loc 	1
 				    nlines     	2
@@ -3229,7 +3313,7 @@
 				quidu      	"5DFE984C01D7"
 				width      	476
 				height     	314)
-			    (object ClassView "Class" "Use Case View::KorisniciiFunkcije::Clan JKPa" @149
+			    (object ClassView "Class" "Use Case View::KorisniciiFunkcije::Clan JKPa" @156
 				ShowCompartmentStereotypes 	TRUE
 				IncludeAttribute 	TRUE
 				IncludeOperation 	TRUE
@@ -3244,7 +3328,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@149
+				    Parent_View 	@156
 				    location   	(1783, 1179)
 				    anchor_loc 	1
 				    nlines     	2
@@ -3259,7 +3343,7 @@
 				height     	506
 				annotation 	8
 				autoResize 	TRUE)
-			    (object AssociationViewNew "$UNNAMED$76" @150
+			    (object AssociationViewNew "$UNNAMED$75" @157
 				location   	(2069, 547)
 				font       	(object Font
 				    size       	9
@@ -3274,31 +3358,31 @@
 				line_color 	3342489
 				quidu      	"5DEBE5F20342"
 				roleview_list 	(list RoleViews
-				    (object RoleView "$UNNAMED$77" @151
-					Parent_View 	@150
+				    (object RoleView "$UNNAMED$76" @158
+					Parent_View 	@157
 					location   	(293, -157)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"5DEBE5F300D5"
-					client     	@150
-					supplier   	@145
+					client     	@157
+					supplier   	@152
 					vertices   	(list Points
 					    (2069, 547)
 					    (2120, 498))
 					line_style 	0)
-				    (object RoleView "$UNNAMED$78" @152
-					Parent_View 	@150
+				    (object RoleView "$UNNAMED$77" @159
+					Parent_View 	@157
 					location   	(293, -157)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"5DEBE5F300D7"
-					client     	@150
-					supplier   	@149
+					client     	@157
+					supplier   	@156
 					vertices   	(list Points
 					    (2069, 547)
 					    (1950, 659))
 					line_style 	0)))
-			    (object InheritView "" @153
+			    (object InheritView "" @160
 				font       	(object Font
 				    size       	9
 				    face       	"Arial"
@@ -3311,23 +3395,23 @@
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5DEBE5C000FB"
-				client     	@135
-				supplier   	@149
+				client     	@142
+				supplier   	@156
 				vertices   	(list Points
 				    (2026, 1107)
 				    (1950, 1027))
 				line_style 	0)
-			    (object InheritView "" @154
+			    (object InheritView "" @161
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5DEBE5C000CE"
-				client     	@131
-				supplier   	@149
+				client     	@138
+				supplier   	@156
 				vertices   	(list Points
 				    (1436, 1153)
 				    (1612, 992))
 				line_style 	0)
-			    (object AssociationViewNew "$UNNAMED$91" @155
+			    (object AssociationViewNew "$UNNAMED$90" @162
 				location   	(1797, 526)
 				font       	(object Font
 				    size       	9
@@ -3342,31 +3426,31 @@
 				line_color 	3342489
 				quidu      	"5DFE94B2036D"
 				roleview_list 	(list RoleViews
-				    (object RoleView "$UNNAMED$92" @156
-					Parent_View 	@155
+				    (object RoleView "$UNNAMED$91" @163
+					Parent_View 	@162
 					location   	(59, -199)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"5DFE94B301B4"
-					client     	@155
-					supplier   	@146
+					client     	@162
+					supplier   	@153
 					vertices   	(list Points
 					    (1797, 526)
 					    (1796, 448))
 					line_style 	0)
-				    (object RoleView "$UNNAMED$93" @157
-					Parent_View 	@155
+				    (object RoleView "$UNNAMED$92" @164
+					Parent_View 	@162
 					location   	(59, -199)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"5DFE94B301B6"
-					client     	@155
-					supplier   	@149
+					client     	@162
+					supplier   	@156
 					vertices   	(list Points
 					    (1797, 526)
 					    (1792, 605))
 					line_style 	0)))
-			    (object AssociationViewNew "$UNNAMED$94" @158
+			    (object AssociationViewNew "$UNNAMED$93" @165
 				location   	(1524, 549)
 				font       	(object Font
 				    size       	9
@@ -3381,31 +3465,31 @@
 				line_color 	3342489
 				quidu      	"5DFE94B603DF"
 				roleview_list 	(list RoleViews
-				    (object RoleView "$UNNAMED$95" @159
-					Parent_View 	@158
+				    (object RoleView "$UNNAMED$94" @166
+					Parent_View 	@165
 					location   	(-214, -176)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"5DFE94B701FC"
-					client     	@158
-					supplier   	@147
+					client     	@165
+					supplier   	@154
 					vertices   	(list Points
 					    (1524, 549)
 					    (1412, 421))
 					line_style 	0)
-				    (object RoleView "$UNNAMED$96" @160
-					Parent_View 	@158
+				    (object RoleView "$UNNAMED$95" @167
+					Parent_View 	@165
 					location   	(-214, -176)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"5DFE94B701FE"
-					client     	@158
-					supplier   	@149
+					client     	@165
+					supplier   	@156
 					vertices   	(list Points
 					    (1524, 549)
 					    (1609, 647))
 					line_style 	0)))
-			    (object AssociationViewNew "$UNNAMED$97" @161
+			    (object AssociationViewNew "$UNNAMED$96" @168
 				location   	(1349, 708)
 				font       	(object Font
 				    size       	9
@@ -3420,26 +3504,26 @@
 				line_color 	3342489
 				quidu      	"5DFE98A200D1"
 				roleview_list 	(list RoleViews
-				    (object RoleView "$UNNAMED$98" @162
-					Parent_View 	@161
+				    (object RoleView "$UNNAMED$97" @169
+					Parent_View 	@168
 					location   	(-434, -107)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"5DFE98A203B8"
-					client     	@161
-					supplier   	@148
+					client     	@168
+					supplier   	@155
 					vertices   	(list Points
 					    (1349, 708)
 					    (1086, 626))
 					line_style 	0)
-				    (object RoleView "$UNNAMED$99" @163
-					Parent_View 	@161
+				    (object RoleView "$UNNAMED$98" @170
+					Parent_View 	@168
 					location   	(-434, -107)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"5DFE98A203BA"
-					client     	@161
-					supplier   	@149
+					client     	@168
+					supplier   	@156
 					vertices   	(list Points
 					    (1349, 708)
 					    (1609, 789))
@@ -3456,14 +3540,14 @@
 			quid       	"5DEBF73A0248")
 		    (object Class "Glavni prozor aplikacije"
 			quid       	"5DEBF82601C1")
-		    (object Mechanism @164
+		    (object Mechanism @171
 			logical_models 	(list unit_reference_list
-			    (object Object "$UNNAMED$100"
+			    (object Object "$UNNAMED$99"
 				quid       	"5DEBF6DD0322"
 				collaborators 	(list link_list
 				    (object Link
 					quid       	"5DEBF6DD0323"
-					supplier   	"$UNNAMED$101"
+					supplier   	"$UNNAMED$100"
 					quidu      	"5DEBF6DD032B"
 					messages   	(list Messages
 					    (object Message "Prijavljivanje"
@@ -3477,7 +3561,7 @@
 						creation   	FALSE)))
 				    (object Link
 					quid       	"5DEBF6DD0325"
-					supplier   	"$UNNAMED$102"
+					supplier   	"$UNNAMED$101"
 					quidu      	"5DEBF6DD0335"
 					messages   	(list Messages
 					    (object Message "Unos korisnickog imena"
@@ -3507,17 +3591,17 @@
 						ordinal    	4
 						quidu      	"000000000000"
 						creation   	FALSE))))
-				class      	"Use Case View::Dijagram Sekvence Izmene Podataka::Clan JKPa"
+				class      	"Use Case View::Dijagram Sekvence Evidentiranje  Uradjenog Posla::Clan JKPa"
 				quidu      	"5DEBC9BC0231"
 				persistence 	"Transient"
 				creationObj 	FALSE
 				multi      	FALSE)
-			    (object Object "$UNNAMED$101"
+			    (object Object "$UNNAMED$100"
 				quid       	"5DEBF6DD032B"
 				collaborators 	(list link_list
 				    (object Link
 					quid       	"5DEBF6DD032C"
-					supplier   	"$UNNAMED$102"
+					supplier   	"$UNNAMED$101"
 					quidu      	"5DEBF6DD0335"
 					messages   	(list Messages
 					    (object Message "<show>"
@@ -3540,7 +3624,7 @@
 						creation   	FALSE)))
 				    (object Link
 					quid       	"5DEBF6DD032F"
-					supplier   	"$UNNAMED$103"
+					supplier   	"$UNNAMED$102"
 					quidu      	"5DEBF6DD034C"
 					messages   	(list Messages
 					    (object Message "<show>"
@@ -3554,7 +3638,7 @@
 						creation   	FALSE)))
 				    (object Link
 					quid       	"5DEBF6DD0331"
-					supplier   	"$UNNAMED$101"
+					supplier   	"$UNNAMED$100"
 					quidu      	"5DEBF6DD032B"
 					messages   	(list Messages
 					    (object Message "<close>"
@@ -3571,12 +3655,12 @@
 				persistence 	"Transient"
 				creationObj 	FALSE
 				multi      	FALSE)
-			    (object Object "$UNNAMED$102"
+			    (object Object "$UNNAMED$101"
 				quid       	"5DEBF6DD0335"
 				collaborators 	(list link_list
 				    (object Link
 					quid       	"5DEBF6DD0336"
-					supplier   	"$UNNAMED$104"
+					supplier   	"$UNNAMED$103"
 					quidu      	"5DEBF6DD033E"
 					messages   	(list Messages
 					    (object Message "Login (username, password)"
@@ -3602,12 +3686,12 @@
 				persistence 	"Transient"
 				creationObj 	FALSE
 				multi      	FALSE)
-			    (object Object "$UNNAMED$104"
+			    (object Object "$UNNAMED$103"
 				quid       	"5DEBF6DD033E"
 				collaborators 	(list link_list
 				    (object Link
 					quid       	"5DEBF6DD033F"
-					supplier   	"$UNNAMED$105"
+					supplier   	"$UNNAMED$104"
 					quidu      	"5DEBF6DD0346"
 					messages   	(list Messages
 					    (object Message "query()"
@@ -3621,7 +3705,7 @@
 						creation   	FALSE)))
 				    (object Link
 					quid       	"5DEBF6DD0342"
-					supplier   	"$UNNAMED$104"
+					supplier   	"$UNNAMED$103"
 					quidu      	"5DEBF6DD033E"
 					messages   	(list Messages
 					    (object Message "Generate SID()"
@@ -3638,23 +3722,23 @@
 				persistence 	"Transient"
 				creationObj 	FALSE
 				multi      	FALSE)
-			    (object Object "$UNNAMED$103"
+			    (object Object "$UNNAMED$102"
 				quid       	"5DEBF6DD034C"
 				class      	"Use Case View::Dijagram Sekvence Log-in::Glavni prozor aplikacije"
 				quidu      	"5DEBF82601C1"
 				persistence 	"Transient"
 				creationObj 	FALSE
 				multi      	FALSE)
-			    (object Object "$UNNAMED$105"
+			    (object Object "$UNNAMED$104"
 				quid       	"5DEBF6DD0346"
-				class      	"Use Case View::Dijagram Sekvence Izmene Podataka::Baza"
+				class      	"Use Case View::Dijagram Sekvence Evidentiranje  Uradjenog Posla::Baza"
 				quidu      	"5DEBC9FE013A"
 				persistence 	"Transient"
 				creationObj 	FALSE
 				multi      	FALSE))))
 		logical_presentations 	(list unit_reference_list
 		    (object InteractionDiagram "DijagramSekLogin"
-			mechanism_ref 	@164
+			mechanism_ref 	@171
 			quid       	"5DEBF6C50043"
 			title      	"DijagramSekLogin"
 			zoom       	100
@@ -3663,7 +3747,7 @@
 			origin_x   	0
 			origin_y   	0
 			items      	(list diagram_item_list
-			    (object InterObjView "$UNNAMED$100" @165
+			    (object InterObjView "$UNNAMED$99" @172
 				location   	(208, 256)
 				font       	(object Font
 				    size       	10
@@ -3675,7 +3759,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@165
+				    Parent_View 	@172
 				    location   	(208, 281)
 				    anchor_loc 	1
 				    nlines     	2
@@ -3693,35 +3777,35 @@
 				icon_width 	120
 				icon_y_offset 	0
 				annotation 	1
-				Focus_Of_Control 	(object Focus_Of_Control "" @166
+				Focus_Of_Control 	(object Focus_Of_Control "" @173
 				    location   	(208, 464)
 				    line_color 	3342489
-				    InterObjView 	@165
+				    InterObjView 	@172
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE)
-				Focus_Of_Control 	(object Focus_Of_Control "" @167
+				Focus_Of_Control 	(object Focus_Of_Control "" @174
 				    location   	(208, 928)
 				    line_color 	3342489
-				    InterObjView 	@165
+				    InterObjView 	@172
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE)
-				Focus_Of_Control 	(object Focus_Of_Control "" @168
+				Focus_Of_Control 	(object Focus_Of_Control "" @175
 				    location   	(208, 1136)
 				    line_color 	3342489
-				    InterObjView 	@165
+				    InterObjView 	@172
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE)
-				Focus_Of_Control 	(object Focus_Of_Control "" @169
+				Focus_Of_Control 	(object Focus_Of_Control "" @176
 				    location   	(208, 1312)
 				    line_color 	3342489
-				    InterObjView 	@165
+				    InterObjView 	@172
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE))
-			    (object InterObjView "$UNNAMED$101" @170
+			    (object InterObjView "$UNNAMED$100" @177
 				location   	(656, 225)
 				font       	(object Font
 				    size       	10
@@ -3733,7 +3817,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@170
+				    Parent_View 	@177
 				    location   	(656, 225)
 				    fill_color 	13434879
 				    anchor_loc 	1
@@ -3751,49 +3835,49 @@
 				icon_width 	0
 				icon_y_offset 	0
 				annotation 	1
-				Focus_Of_Control 	(object Focus_Of_Control "" @171
+				Focus_Of_Control 	(object Focus_Of_Control "" @178
 				    location   	(656, 464)
 				    line_color 	3342489
-				    InterObjView 	@170
+				    InterObjView 	@177
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE)
-				Focus_Of_Control 	(object Focus_Of_Control "" @172
+				Focus_Of_Control 	(object Focus_Of_Control "" @179
 				    location   	(656, 688)
 				    line_color 	3342489
-				    InterObjView 	@170
+				    InterObjView 	@177
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE)
-				Focus_Of_Control 	(object Focus_Of_Control "" @173
+				Focus_Of_Control 	(object Focus_Of_Control "" @180
 				    location   	(656, 2090)
 				    line_color 	3342489
-				    InterObjView 	@170
+				    InterObjView 	@177
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE)
-				Focus_Of_Control 	(object Focus_Of_Control "" @174
+				Focus_Of_Control 	(object Focus_Of_Control "" @181
 				    location   	(656, 2240)
 				    line_color 	3342489
-				    InterObjView 	@170
+				    InterObjView 	@177
 				    height     	91
 				    y_coord    	1
 				    Nested     	FALSE)
-				Focus_Of_Control 	(object Focus_Of_Control "" @175
+				Focus_Of_Control 	(object Focus_Of_Control "" @182
 				    location   	(656, 2384)
 				    line_color 	3342489
-				    InterObjView 	@170
+				    InterObjView 	@177
 				    height     	84
 				    y_coord    	-6
 				    Nested     	FALSE)
-				Focus_Of_Control 	(object Focus_Of_Control "" @176
+				Focus_Of_Control 	(object Focus_Of_Control "" @183
 				    location   	(656, 2403)
 				    line_color 	3342489
-				    InterObjView 	@170
+				    InterObjView 	@177
 				    height     	90
 				    y_coord    	0
 				    Nested     	TRUE))
-			    (object InterObjView "$UNNAMED$102" @177
+			    (object InterObjView "$UNNAMED$101" @184
 				location   	(1120, 225)
 				font       	(object Font
 				    size       	10
@@ -3805,7 +3889,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@177
+				    Parent_View 	@184
 				    location   	(1120, 225)
 				    fill_color 	13434879
 				    anchor_loc 	1
@@ -3823,56 +3907,56 @@
 				icon_width 	0
 				icon_y_offset 	0
 				annotation 	1
-				Focus_Of_Control 	(object Focus_Of_Control "" @178
+				Focus_Of_Control 	(object Focus_Of_Control "" @185
 				    location   	(1120, 688)
 				    line_color 	3342489
-				    InterObjView 	@177
+				    InterObjView 	@184
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE)
-				Focus_Of_Control 	(object Focus_Of_Control "" @179
+				Focus_Of_Control 	(object Focus_Of_Control "" @186
 				    location   	(1120, 928)
 				    line_color 	3342489
-				    InterObjView 	@177
+				    InterObjView 	@184
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE)
-				Focus_Of_Control 	(object Focus_Of_Control "" @180
+				Focus_Of_Control 	(object Focus_Of_Control "" @187
 				    location   	(1120, 1136)
 				    line_color 	3342489
-				    InterObjView 	@177
+				    InterObjView 	@184
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE)
-				Focus_Of_Control 	(object Focus_Of_Control "" @181
+				Focus_Of_Control 	(object Focus_Of_Control "" @188
 				    location   	(1120, 1312)
 				    line_color 	3342489
-				    InterObjView 	@177
+				    InterObjView 	@184
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE)
-				Focus_Of_Control 	(object Focus_Of_Control "" @182
+				Focus_Of_Control 	(object Focus_Of_Control "" @189
 				    location   	(1120, 1504)
 				    line_color 	3342489
-				    InterObjView 	@177
+				    InterObjView 	@184
 				    height     	91
 				    y_coord    	1
 				    Nested     	FALSE)
-				Focus_Of_Control 	(object Focus_Of_Control "" @183
+				Focus_Of_Control 	(object Focus_Of_Control "" @190
 				    location   	(1120, 1962)
 				    line_color 	3342489
-				    InterObjView 	@177
+				    InterObjView 	@184
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE)
-				Focus_Of_Control 	(object Focus_Of_Control "" @184
+				Focus_Of_Control 	(object Focus_Of_Control "" @191
 				    location   	(1120, 2096)
 				    line_color 	3342489
-				    InterObjView 	@177
+				    InterObjView 	@184
 				    height     	91
 				    y_coord    	1
 				    Nested     	FALSE))
-			    (object InterObjView "$UNNAMED$104" @185
+			    (object InterObjView "$UNNAMED$103" @192
 				location   	(1568, 225)
 				font       	(object Font
 				    size       	10
@@ -3884,7 +3968,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@185
+				    Parent_View 	@192
 				    location   	(1568, 225)
 				    fill_color 	13434879
 				    anchor_loc 	1
@@ -3902,42 +3986,42 @@
 				icon_width 	0
 				icon_y_offset 	0
 				annotation 	1
-				Focus_Of_Control 	(object Focus_Of_Control "" @186
+				Focus_Of_Control 	(object Focus_Of_Control "" @193
 				    location   	(1568, 1498)
 				    line_color 	3342489
-				    InterObjView 	@185
+				    InterObjView 	@192
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE)
-				Focus_Of_Control 	(object Focus_Of_Control "" @187
+				Focus_Of_Control 	(object Focus_Of_Control "" @194
 				    location   	(1568, 1632)
 				    line_color 	3342489
-				    InterObjView 	@185
+				    InterObjView 	@192
 				    height     	91
 				    y_coord    	1
 				    Nested     	FALSE)
-				Focus_Of_Control 	(object Focus_Of_Control "" @188
+				Focus_Of_Control 	(object Focus_Of_Control "" @195
 				    location   	(1568, 1792)
 				    line_color 	3342489
-				    InterObjView 	@185
+				    InterObjView 	@192
 				    height     	84
 				    y_coord    	-6
 				    Nested     	FALSE)
-				Focus_Of_Control 	(object Focus_Of_Control "" @189
+				Focus_Of_Control 	(object Focus_Of_Control "" @196
 				    location   	(1568, 1811)
 				    line_color 	3342489
-				    InterObjView 	@185
+				    InterObjView 	@192
 				    height     	90
 				    y_coord    	0
 				    Nested     	TRUE)
-				Focus_Of_Control 	(object Focus_Of_Control "" @190
+				Focus_Of_Control 	(object Focus_Of_Control "" @197
 				    location   	(1568, 1968)
 				    line_color 	3342489
-				    InterObjView 	@185
+				    InterObjView 	@192
 				    height     	91
 				    y_coord    	1
 				    Nested     	FALSE))
-			    (object InterObjView "$UNNAMED$103" @191
+			    (object InterObjView "$UNNAMED$102" @198
 				location   	(2064, 225)
 				font       	(object Font
 				    size       	10
@@ -3949,7 +4033,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@191
+				    Parent_View 	@198
 				    location   	(2064, 225)
 				    fill_color 	13434879
 				    anchor_loc 	1
@@ -3967,14 +4051,14 @@
 				icon_width 	0
 				icon_y_offset 	0
 				annotation 	1
-				Focus_Of_Control 	(object Focus_Of_Control "" @192
+				Focus_Of_Control 	(object Focus_Of_Control "" @199
 				    location   	(2064, 2234)
 				    line_color 	3342489
-				    InterObjView 	@191
+				    InterObjView 	@198
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE))
-			    (object InterObjView "$UNNAMED$105" @193
+			    (object InterObjView "$UNNAMED$104" @200
 				location   	(2464, 225)
 				font       	(object Font
 				    size       	10
@@ -3986,7 +4070,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@193
+				    Parent_View 	@200
 				    location   	(2464, 250)
 				    anchor_loc 	1
 				    nlines     	2
@@ -4004,14 +4088,14 @@
 				icon_width 	120
 				icon_y_offset 	0
 				annotation 	1
-				Focus_Of_Control 	(object Focus_Of_Control "" @194
+				Focus_Of_Control 	(object Focus_Of_Control "" @201
 				    location   	(2464, 1626)
 				    line_color 	3342489
-				    InterObjView 	@193
+				    InterObjView 	@200
 				    height     	90
 				    y_coord    	0
 				    Nested     	FALSE))
-			    (object SelfMessView "<close>" @195
+			    (object SelfMessView "<close>" @202
 				location   	(16, 2378)
 				font       	(object Font
 				    size       	10
@@ -4022,8 +4106,8 @@
 				    strike     	FALSE
 				    color      	0
 				    default_color 	TRUE)
-				label      	(object SegLabel @196
-				    Parent_View 	@195
+				label      	(object SegLabel @203
+				    Parent_View 	@202
 				    location   	(747, 2335)
 				    font       	(object Font
 					size       	10
@@ -4044,14 +4128,14 @@
 				    height     	44
 				    orientation 	0)
 				line_color 	3342489
-				client     	@170
-				supplier   	@170
-				Focus_Src  	@175
-				Focus_Entry 	@176
+				client     	@177
+				supplier   	@177
+				Focus_Src  	@182
+				Focus_Entry 	@183
 				origin     	(672, 2378)
 				terminus   	(822, 2378)
 				ordinal    	11)
-			    (object InterMessView "<show>" @197
+			    (object InterMessView "<show>" @204
 				location   	(16, 688)
 				font       	(object Font
 				    size       	10
@@ -4062,8 +4146,8 @@
 				    strike     	FALSE
 				    color      	0
 				    default_color 	TRUE)
-				label      	(object SegLabel @198
-				    Parent_View 	@197
+				label      	(object SegLabel @205
+				    Parent_View 	@204
 				    location   	(887, 645)
 				    font       	(object Font
 					size       	10
@@ -4084,14 +4168,14 @@
 				    height     	44
 				    orientation 	0)
 				line_color 	3342489
-				client     	@170
-				supplier   	@177
-				Focus_Src  	@172
-				Focus_Entry 	@178
+				client     	@177
+				supplier   	@184
+				Focus_Src  	@179
+				Focus_Entry 	@185
 				origin     	(671, 688)
 				terminus   	(1104, 688)
 				ordinal    	1)
-			    (object InterMessView "Unos korisnickog imena" @199
+			    (object InterMessView "Unos korisnickog imena" @206
 				location   	(16, 928)
 				font       	(object Font
 				    size       	10
@@ -4102,8 +4186,8 @@
 				    strike     	FALSE
 				    color      	0
 				    default_color 	TRUE)
-				label      	(object SegLabel @200
-				    Parent_View 	@199
+				label      	(object SegLabel @207
+				    Parent_View 	@206
 				    location   	(662, 885)
 				    font       	(object Font
 					size       	10
@@ -4124,14 +4208,14 @@
 				    height     	44
 				    orientation 	0)
 				line_color 	3342489
-				client     	@165
-				supplier   	@177
-				Focus_Src  	@167
-				Focus_Entry 	@179
+				client     	@172
+				supplier   	@184
+				Focus_Src  	@174
+				Focus_Entry 	@186
 				origin     	(223, 928)
 				terminus   	(1104, 928)
 				ordinal    	2)
-			    (object InterMessView "Unos lozinke" @201
+			    (object InterMessView "Unos lozinke" @208
 				location   	(16, 1136)
 				font       	(object Font
 				    size       	10
@@ -4142,8 +4226,8 @@
 				    strike     	FALSE
 				    color      	0
 				    default_color 	TRUE)
-				label      	(object SegLabel @202
-				    Parent_View 	@201
+				label      	(object SegLabel @209
+				    Parent_View 	@208
 				    location   	(662, 1093)
 				    font       	(object Font
 					size       	10
@@ -4164,14 +4248,14 @@
 				    height     	44
 				    orientation 	0)
 				line_color 	3342489
-				client     	@165
-				supplier   	@177
-				Focus_Src  	@168
-				Focus_Entry 	@180
+				client     	@172
+				supplier   	@184
+				Focus_Src  	@175
+				Focus_Entry 	@187
 				origin     	(223, 1136)
 				terminus   	(1104, 1136)
 				ordinal    	3)
-			    (object InterMessView "Submit()" @203
+			    (object InterMessView "Submit()" @210
 				location   	(16, 1312)
 				font       	(object Font
 				    size       	10
@@ -4182,8 +4266,8 @@
 				    strike     	FALSE
 				    color      	0
 				    default_color 	TRUE)
-				label      	(object SegLabel @204
-				    Parent_View 	@203
+				label      	(object SegLabel @211
+				    Parent_View 	@210
 				    location   	(662, 1269)
 				    font       	(object Font
 					size       	10
@@ -4204,14 +4288,14 @@
 				    height     	44
 				    orientation 	0)
 				line_color 	3342489
-				client     	@165
-				supplier   	@177
-				Focus_Src  	@169
-				Focus_Entry 	@181
+				client     	@172
+				supplier   	@184
+				Focus_Src  	@176
+				Focus_Entry 	@188
 				origin     	(223, 1312)
 				terminus   	(1104, 1312)
 				ordinal    	4)
-			    (object InterMessView "SID" @205
+			    (object InterMessView "SID" @212
 				location   	(16, 2090)
 				font       	(object Font
 				    size       	10
@@ -4222,8 +4306,8 @@
 				    strike     	FALSE
 				    color      	0
 				    default_color 	TRUE)
-				label      	(object SegLabel @206
-				    Parent_View 	@205
+				label      	(object SegLabel @213
+				    Parent_View 	@212
 				    location   	(888, 2047)
 				    font       	(object Font
 					size       	10
@@ -4244,14 +4328,14 @@
 				    height     	44
 				    orientation 	1)
 				line_color 	3342489
-				client     	@177
-				supplier   	@170
-				Focus_Src  	@184
-				Focus_Entry 	@173
+				client     	@184
+				supplier   	@177
+				Focus_Src  	@191
+				Focus_Entry 	@180
 				origin     	(1104, 2090)
 				terminus   	(672, 2090)
 				ordinal    	9)
-			    (object InterMessView "Login (username, password)" @207
+			    (object InterMessView "Login (username, password)" @214
 				location   	(16, 1498)
 				font       	(object Font
 				    size       	10
@@ -4262,8 +4346,8 @@
 				    strike     	FALSE
 				    color      	0
 				    default_color 	TRUE)
-				label      	(object SegLabel @208
-				    Parent_View 	@207
+				label      	(object SegLabel @215
+				    Parent_View 	@214
 				    location   	(1343, 1455)
 				    font       	(object Font
 					size       	10
@@ -4284,14 +4368,14 @@
 				    height     	44
 				    orientation 	0)
 				line_color 	3342489
-				client     	@177
-				supplier   	@185
-				Focus_Src  	@182
-				Focus_Entry 	@186
+				client     	@184
+				supplier   	@192
+				Focus_Src  	@189
+				Focus_Entry 	@193
 				origin     	(1135, 1498)
 				terminus   	(1552, 1498)
 				ordinal    	5)
-			    (object SelfMessView "Generate SID()" @209
+			    (object SelfMessView "Generate SID()" @216
 				location   	(16, 1786)
 				font       	(object Font
 				    size       	10
@@ -4302,8 +4386,8 @@
 				    strike     	FALSE
 				    color      	0
 				    default_color 	TRUE)
-				label      	(object SegLabel @210
-				    Parent_View 	@209
+				label      	(object SegLabel @217
+				    Parent_View 	@216
 				    location   	(1659, 1743)
 				    font       	(object Font
 					size       	10
@@ -4324,14 +4408,14 @@
 				    height     	44
 				    orientation 	0)
 				line_color 	3342489
-				client     	@185
-				supplier   	@185
-				Focus_Src  	@188
-				Focus_Entry 	@189
+				client     	@192
+				supplier   	@192
+				Focus_Src  	@195
+				Focus_Entry 	@196
 				origin     	(1584, 1786)
 				terminus   	(1734, 1786)
 				ordinal    	7)
-			    (object InterMessView "SID" @211
+			    (object InterMessView "SID" @218
 				location   	(16, 1962)
 				font       	(object Font
 				    size       	10
@@ -4342,8 +4426,8 @@
 				    strike     	FALSE
 				    color      	0
 				    default_color 	TRUE)
-				label      	(object SegLabel @212
-				    Parent_View 	@211
+				label      	(object SegLabel @219
+				    Parent_View 	@218
 				    location   	(1344, 1919)
 				    font       	(object Font
 					size       	10
@@ -4364,14 +4448,14 @@
 				    height     	44
 				    orientation 	1)
 				line_color 	3342489
-				client     	@185
-				supplier   	@177
-				Focus_Src  	@190
-				Focus_Entry 	@183
+				client     	@192
+				supplier   	@184
+				Focus_Src  	@197
+				Focus_Entry 	@190
 				origin     	(1552, 1962)
 				terminus   	(1136, 1962)
 				ordinal    	8)
-			    (object InterMessView "<show>" @213
+			    (object InterMessView "<show>" @220
 				location   	(16, 2234)
 				font       	(object Font
 				    size       	10
@@ -4382,8 +4466,8 @@
 				    strike     	FALSE
 				    color      	0
 				    default_color 	TRUE)
-				label      	(object SegLabel @214
-				    Parent_View 	@213
+				label      	(object SegLabel @221
+				    Parent_View 	@220
 				    location   	(1359, 2191)
 				    font       	(object Font
 					size       	10
@@ -4404,14 +4488,14 @@
 				    height     	44
 				    orientation 	0)
 				line_color 	3342489
-				client     	@170
-				supplier   	@191
-				Focus_Src  	@174
-				Focus_Entry 	@192
+				client     	@177
+				supplier   	@198
+				Focus_Src  	@181
+				Focus_Entry 	@199
 				origin     	(671, 2234)
 				terminus   	(2048, 2234)
 				ordinal    	10)
-			    (object InterMessView "query()" @215
+			    (object InterMessView "query()" @222
 				location   	(16, 1626)
 				font       	(object Font
 				    size       	10
@@ -4422,8 +4506,8 @@
 				    strike     	FALSE
 				    color      	0
 				    default_color 	TRUE)
-				label      	(object SegLabel @216
-				    Parent_View 	@215
+				label      	(object SegLabel @223
+				    Parent_View 	@222
 				    location   	(2014, 1583)
 				    font       	(object Font
 					size       	10
@@ -4444,14 +4528,14 @@
 				    height     	44
 				    orientation 	0)
 				line_color 	3342489
-				client     	@185
-				supplier   	@193
-				Focus_Src  	@187
-				Focus_Entry 	@194
+				client     	@192
+				supplier   	@200
+				Focus_Src  	@194
+				Focus_Entry 	@201
 				origin     	(1583, 1626)
 				terminus   	(2448, 1626)
 				ordinal    	6)
-			    (object InterMessView "Prijavljivanje" @217
+			    (object InterMessView "Prijavljivanje" @224
 				location   	(16, 464)
 				font       	(object Font
 				    size       	10
@@ -4462,8 +4546,8 @@
 				    strike     	FALSE
 				    color      	0
 				    default_color 	TRUE)
-				label      	(object SegLabel @218
-				    Parent_View 	@217
+				label      	(object SegLabel @225
+				    Parent_View 	@224
 				    location   	(430, 421)
 				    font       	(object Font
 					size       	10
@@ -4484,10 +4568,10 @@
 				    height     	44
 				    orientation 	0)
 				line_color 	3342489
-				client     	@165
-				supplier   	@170
-				Focus_Src  	@166
-				Focus_Entry 	@171
+				client     	@172
+				supplier   	@177
+				Focus_Src  	@173
+				Focus_Entry 	@178
 				origin     	(223, 464)
 				terminus   	(640, 464)
 				ordinal    	0)))))
@@ -4590,7 +4674,7 @@
 			origin_x   	0
 			origin_y   	0
 			items      	(list diagram_item_list
-			    (object CategoryView "Use Case View::Pregled arhitekture::Korisnicki interfejs" @219
+			    (object CategoryView "Use Case View::Pregled arhitekture::Korisnicki interfejs" @226
 				location   	(447, 212)
 				font       	(object Font
 				    size       	9
@@ -4602,7 +4686,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@219
+				    Parent_View 	@226
 				    location   	(303, 175)
 				    fill_color 	13434879
 				    nlines     	2
@@ -4610,7 +4694,7 @@
 				    justify    	0
 				    label      	"Korisnicki interfejs")
 				stereotype 	(object ItemLabel
-				    Parent_View 	@219
+				    Parent_View 	@226
 				    location   	(303, 128)
 				    fill_color 	13434879
 				    anchor     	10
@@ -4624,7 +4708,7 @@
 				quidu      	"5DEEC995021F"
 				width      	300
 				height     	180)
-			    (object CategoryView "Use Case View::Pregled arhitekture::Aplikaciona logika" @220
+			    (object CategoryView "Use Case View::Pregled arhitekture::Aplikaciona logika" @227
 				location   	(447, 659)
 				font       	(object Font
 				    size       	9
@@ -4636,7 +4720,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@220
+				    Parent_View 	@227
 				    location   	(303, 622)
 				    fill_color 	13434879
 				    nlines     	2
@@ -4644,7 +4728,7 @@
 				    justify    	0
 				    label      	"Aplikaciona logika")
 				stereotype 	(object ItemLabel
-				    Parent_View 	@220
+				    Parent_View 	@227
 				    location   	(303, 575)
 				    fill_color 	13434879
 				    anchor     	10
@@ -4658,7 +4742,7 @@
 				quidu      	"5DEEC9970284"
 				width      	300
 				height     	180)
-			    (object CategoryView "Use Case View::Pregled arhitekture::Pristup podacima" @221
+			    (object CategoryView "Use Case View::Pregled arhitekture::Pristup podacima" @228
 				location   	(450, 1125)
 				font       	(object Font
 				    size       	9
@@ -4670,7 +4754,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@221
+				    Parent_View 	@228
 				    location   	(306, 1088)
 				    fill_color 	13434879
 				    nlines     	2
@@ -4678,7 +4762,7 @@
 				    justify    	0
 				    label      	"Pristup podacima")
 				stereotype 	(object ItemLabel
-				    Parent_View 	@221
+				    Parent_View 	@228
 				    location   	(306, 1041)
 				    fill_color 	13434879
 				    anchor     	10
@@ -4692,7 +4776,7 @@
 				quidu      	"5DEEC999024E"
 				width      	300
 				height     	180)
-			    (object CategoryView "Use Case View::Pregled arhitekture::WPF" @222
+			    (object CategoryView "Use Case View::Pregled arhitekture::WPF" @229
 				location   	(1228, 212)
 				font       	(object Font
 				    size       	9
@@ -4704,14 +4788,14 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@222
+				    Parent_View 	@229
 				    location   	(1084, 175)
 				    nlines     	2
 				    max_width  	288
 				    justify    	0
 				    label      	"WPF")
 				stereotype 	(object ItemLabel
-				    Parent_View 	@222
+				    Parent_View 	@229
 				    location   	(1084, 128)
 				    anchor     	10
 				    nlines     	1
@@ -4724,7 +4808,7 @@
 				quidu      	"5DEEC99B00F6"
 				width      	300
 				height     	180)
-			    (object CategoryView "Use Case View::Pregled arhitekture::C\\#" @223
+			    (object CategoryView "Use Case View::Pregled arhitekture::C\\#" @230
 				location   	(1213, 659)
 				font       	(object Font
 				    size       	9
@@ -4736,14 +4820,14 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@223
+				    Parent_View 	@230
 				    location   	(1069, 622)
 				    nlines     	2
 				    max_width  	288
 				    justify    	0
 				    label      	"C#")
 				stereotype 	(object ItemLabel
-				    Parent_View 	@223
+				    Parent_View 	@230
 				    location   	(1069, 575)
 				    anchor     	10
 				    nlines     	1
@@ -4756,7 +4840,7 @@
 				quidu      	"5DEEC9A20217"
 				width      	300
 				height     	180)
-			    (object CategoryView "Use Case View::Pregled arhitekture::SQL" @224
+			    (object CategoryView "Use Case View::Pregled arhitekture::SQL" @231
 				location   	(1225, 1125)
 				font       	(object Font
 				    size       	9
@@ -4768,14 +4852,14 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@224
+				    Parent_View 	@231
 				    location   	(1081, 1088)
 				    nlines     	2
 				    max_width  	288
 				    justify    	0
 				    label      	"SQL")
 				stereotype 	(object ItemLabel
-				    Parent_View 	@224
+				    Parent_View 	@231
 				    location   	(1081, 1041)
 				    anchor     	10
 				    nlines     	1
@@ -4788,72 +4872,72 @@
 				quidu      	"5DEEC9A401E2"
 				width      	300
 				height     	180)
-			    (object ImportView "" @225
+			    (object ImportView "" @232
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5DEECAD2006A"
-				client     	@219
-				supplier   	@222
+				client     	@226
+				supplier   	@229
 				vertices   	(list Points
 				    (597, 212)
 				    (1077, 212))
 				line_style 	0)
-			    (object ImportView "" @226
+			    (object ImportView "" @233
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5DEECAD902AD"
-				client     	@219
-				supplier   	@223
+				client     	@226
+				supplier   	@230
 				vertices   	(list Points
 				    (597, 299)
 				    (1062, 570))
 				line_style 	0)
-			    (object ImportView "" @227
+			    (object ImportView "" @234
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5DEECADB0281"
-				client     	@219
-				supplier   	@220
+				client     	@226
+				supplier   	@227
 				vertices   	(list Points
 				    (447, 302)
 				    (447, 514))
 				line_style 	0)
-			    (object ImportView "" @228
+			    (object ImportView "" @235
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5DEECAE60088"
-				client     	@220
-				supplier   	@223
+				client     	@227
+				supplier   	@230
 				vertices   	(list Points
 				    (597, 659)
 				    (1062, 659))
 				line_style 	0)
-			    (object ImportView "" @229
+			    (object ImportView "" @236
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5DEECAF00137"
-				client     	@220
-				supplier   	@224
+				client     	@227
+				supplier   	@231
 				vertices   	(list Points
 				    (597, 748)
 				    (1074, 1034))
 				line_style 	0)
-			    (object ImportView "" @230
+			    (object ImportView "" @237
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5DEECAF3003D"
-				client     	@220
-				supplier   	@221
+				client     	@227
+				supplier   	@228
 				vertices   	(list Points
 				    (447, 749)
 				    (448, 980))
 				line_style 	0)
-			    (object ImportView "" @231
+			    (object ImportView "" @238
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5DEECAFF00CF"
-				client     	@221
-				supplier   	@224
+				client     	@228
+				supplier   	@231
 				vertices   	(list Points
 				    (600, 1125)
 				    (1074, 1125))
@@ -5030,9 +5114,9 @@
 					
 					stereotype 	"use-case realization"
 					logical_models 	(list unit_reference_list
-					    (object Mechanism @232
+					    (object Mechanism @239
 						logical_models 	(list unit_reference_list))
-					    (object Mechanism @233
+					    (object Mechanism @240
 						logical_models 	(list unit_reference_list)))
 					logical_presentations 	(list unit_reference_list
 					    (object ClassDiagram "<Use Case Name> -  Realize Dependencies"
@@ -5056,7 +5140,7 @@
 						origin_y   	0
 						items      	(list diagram_item_list))
 					    (object InteractionDiagram "<Use Case Name> -  Basic Flow"
-						mechanism_ref 	@232
+						mechanism_ref 	@239
 						quid       	"35081E3603A2"
 						title      	"<Use Case Name> -  Basic Flow"
 						zoom       	100
@@ -5066,7 +5150,7 @@
 						origin_y   	0
 						items      	(list diagram_item_list))
 					    (object InteractionDiagram "<Use Case Name> -  <Flow Type>"
-						mechanism_ref 	@233
+						mechanism_ref 	@240
 						quid       	"3540A0B901AE"
 						title      	"<Use Case Name> -  <Flow Type>"
 						zoom       	100
@@ -5086,7 +5170,7 @@
 					origin_x   	0
 					origin_y   	0
 					items      	(list diagram_item_list
-					    (object NoteView @234
+					    (object NoteView @241
 						location   	(704, 144)
 						font       	(object Font
 						    size       	9
@@ -5098,7 +5182,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@234
+						    Parent_View 	@241
 						    location   	(38, 25)
 						    fill_color 	13434879
 						    nlines     	5
@@ -5112,7 +5196,7 @@
 						fill_color 	13434879
 						width      	1356
 						height     	250)
-					    (object UseCaseView "Logical View::Design Model::Use-Case Realizations::<Use-Case Name>::<Use-Case Name>" @235
+					    (object UseCaseView "Logical View::Design Model::Use-Case Realizations::<Use-Case Name>::<Use-Case Name>" @242
 						location   	(608, 960)
 						font       	(object Font
 						    size       	9
@@ -5124,7 +5208,7 @@
 						    color      	0
 						    default_color 	TRUE)
 						label      	(object ItemLabel
-						    Parent_View 	@235
+						    Parent_View 	@242
 						    location   	(608, 1148)
 						    anchor_loc 	1
 						    nlines     	2
@@ -5132,7 +5216,7 @@
 						    justify    	0
 						    label      	"<Use-Case Name>")
 						stereotype 	(object ItemLabel
-						    Parent_View 	@235
+						    Parent_View 	@242
 						    location   	(608, 1078)
 						    anchor     	10
 						    anchor_loc 	1
@@ -5160,16 +5244,16 @@
 				quid       	"35DB3CB002BC"
 				documentation 	"This is a sub-process or thread within the <name of process of which this thread is a sub-process> process which handles <enter a description of what this thread does>.  A separate thread was chosen for this to be able to <enter the rationale for creating a separate thread>."
 				stereotype 	"thread")
-			    (object Association "$UNNAMED$106"
+			    (object Association "$UNNAMED$105"
 				quid       	"35DB3E72017C"
 				roles      	(list role_list
-				    (object Role "$UNNAMED$107"
+				    (object Role "$UNNAMED$106"
 					quid       	"35DB3E73005A"
 					supplier   	"Logical View::Design Model::Process View::<Process Name>"
 					quidu      	"35DB3C8302D0"
 					is_navigable 	TRUE
 					is_aggregate 	TRUE)
-				    (object Role "$UNNAMED$108"
+				    (object Role "$UNNAMED$107"
 					quid       	"35DB3E730096"
 					supplier   	"Logical View::Design Model::Process View::<Thread Name>"
 					quidu      	"35DB3CB002BC"
@@ -5186,7 +5270,7 @@
 				origin_x   	0
 				origin_y   	0
 				items      	(list diagram_item_list
-				    (object ClassView "Class" "Logical View::Design Model::Process View::<Process Name>" @236
+				    (object ClassView "Class" "Logical View::Design Model::Process View::<Process Name>" @243
 					ShowCompartmentStereotypes 	TRUE
 					IncludeAttribute 	TRUE
 					IncludeOperation 	TRUE
@@ -5201,7 +5285,7 @@
 					    color      	0
 					    default_color 	TRUE)
 					label      	(object ItemLabel
-					    Parent_View 	@236
+					    Parent_View 	@243
 					    location   	(122, 436)
 					    fill_color 	13434879
 					    nlines     	1
@@ -5209,7 +5293,7 @@
 					    justify    	0
 					    label      	"<Process Name>")
 					stereotype 	(object ItemLabel
-					    Parent_View 	@236
+					    Parent_View 	@243
 					    location   	(122, 389)
 					    fill_color 	13434879
 					    anchor     	10
@@ -5225,7 +5309,7 @@
 					height     	172
 					annotation 	8
 					autoResize 	TRUE)
-				    (object ClassView "Class" "Logical View::Design Model::Process View::<Thread Name>" @237
+				    (object ClassView "Class" "Logical View::Design Model::Process View::<Thread Name>" @244
 					ShowCompartmentStereotypes 	TRUE
 					IncludeAttribute 	TRUE
 					IncludeOperation 	TRUE
@@ -5240,7 +5324,7 @@
 					    color      	0
 					    default_color 	TRUE)
 					label      	(object ItemLabel
-					    Parent_View 	@237
+					    Parent_View 	@244
 					    location   	(740, 436)
 					    fill_color 	13434879
 					    nlines     	1
@@ -5248,7 +5332,7 @@
 					    justify    	0
 					    label      	"<Thread Name>")
 					stereotype 	(object ItemLabel
-					    Parent_View 	@237
+					    Parent_View 	@244
 					    location   	(740, 389)
 					    fill_color 	13434879
 					    anchor     	10
@@ -5264,32 +5348,32 @@
 					height     	172
 					annotation 	8
 					autoResize 	TRUE)
-				    (object AssociationViewNew "$UNNAMED$106" @238
+				    (object AssociationViewNew "$UNNAMED$105" @245
 					location   	(596, 464)
 					stereotype 	TRUE
 					line_color 	3342489
 					quidu      	"35DB3E72017C"
 					roleview_list 	(list RoleViews
-					    (object RoleView "$UNNAMED$107" @239
-						Parent_View 	@238
+					    (object RoleView "$UNNAMED$106" @246
+						Parent_View 	@245
 						location   	(-300, 0)
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"35DB3E73005A"
-						client     	@238
-						supplier   	@236
+						client     	@245
+						supplier   	@243
 						vertices   	(list Points
 						    (596, 464)
 						    (463, 464))
 						line_style 	0)
-					    (object RoleView "$UNNAMED$108" @240
-						Parent_View 	@238
+					    (object RoleView "$UNNAMED$107" @247
+						Parent_View 	@245
 						location   	(-300, 0)
 						stereotype 	TRUE
 						line_color 	3342489
 						quidu      	"35DB3E730096"
-						client     	@238
-						supplier   	@237
+						client     	@245
+						supplier   	@244
 						vertices   	(list Points
 						    (596, 464)
 						    (730, 464))
@@ -5305,7 +5389,7 @@
 			origin_x   	0
 			origin_y   	0
 			items      	(list diagram_item_list
-			    (object NoteView @241
+			    (object NoteView @248
 				location   	(672, 304)
 				font       	(object Font
 				    size       	9
@@ -5317,7 +5401,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@241
+				    Parent_View 	@248
 				    location   	(28, 19)
 				    fill_color 	13434879
 				    nlines     	13
@@ -5341,7 +5425,7 @@
 				fill_color 	13434879
 				width      	1313
 				height     	582)
-			    (object NoteView @242
+			    (object NoteView @249
 				location   	(1696, 160)
 				font       	(object Font
 				    size       	9
@@ -5353,7 +5437,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@242
+				    Parent_View 	@249
 				    location   	(1358, 29)
 				    fill_color 	13434879
 				    nlines     	5
@@ -5389,7 +5473,7 @@
 			origin_x   	0
 			origin_y   	0
 			items      	(list diagram_item_list
-			    (object NoteView @243
+			    (object NoteView @250
 				location   	(576, 256)
 				font       	(object Font
 				    size       	9
@@ -5401,7 +5485,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@243
+				    Parent_View 	@250
 				    location   	(44, 31)
 				    fill_color 	13434879
 				    nlines     	9
@@ -5421,7 +5505,7 @@
 				fill_color 	13434879
 				width      	1088
 				height     	463)
-			    (object NoteView @244
+			    (object NoteView @251
 				location   	(1520, 176)
 				font       	(object Font
 				    size       	9
@@ -5433,7 +5517,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@244
+				    Parent_View 	@251
 				    location   	(1182, 45)
 				    fill_color 	13434879
 				    nlines     	5
@@ -5547,7 +5631,7 @@
 			origin_x   	0
 			origin_y   	0
 			items      	(list diagram_item_list
-			    (object NoteView @245
+			    (object NoteView @252
 				location   	(624, 160)
 				font       	(object Font
 				    size       	9
@@ -5559,7 +5643,7 @@
 				    color      	0
 				    default_color 	TRUE)
 				label      	(object ItemLabel
-				    Parent_View 	@245
+				    Parent_View 	@252
 				    location   	(21, 26)
 				    fill_color 	13434879
 				    nlines     	5
@@ -5586,7 +5670,7 @@
 		origin_x   	0
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object SubSysView "Component View::Implementation Model" @246
+		    (object SubSysView "Component View::Implementation Model" @253
 			location   	(736, 800)
 			font       	(object Font
 			    size       	9
@@ -5598,7 +5682,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@246
+			    Parent_View 	@253
 			    location   	(552, 713)
 			    fill_color 	13434879
 			    nlines     	2
@@ -5661,7 +5745,7 @@
 		origin_x   	0
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object ProcessorView "<processor name>" @247
+		    (object ProcessorView "<processor name>" @254
 			location   	(512, 1056)
 			font       	(object Font
 			    size       	9
@@ -5673,7 +5757,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@247
+			    Parent_View 	@254
 			    location   	(276, 900)
 			    nlines     	2
 			    max_width  	400
@@ -5684,7 +5768,7 @@
 			width      	475
 			height     	381
 			annotation 	3)
-		    (object DeviceView "<device name>" @248
+		    (object DeviceView "<device name>" @255
 			location   	(1040, 1056)
 			font       	(object Font
 			    size       	9
@@ -5696,7 +5780,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@248
+			    Parent_View 	@255
 			    location   	(867, 950)
 			    nlines     	2
 			    max_width  	275
@@ -5707,16 +5791,16 @@
 			width      	350
 			height     	282
 			annotation 	0)
-		    (object ConnectionView "" @249
+		    (object ConnectionView "" @256
 			stereotype 	TRUE
 			quidu      	"34DBBD4B008C"
-			client     	@247
-			supplier   	@248
+			client     	@254
+			supplier   	@255
 			vertices   	(list Points
 			    (718, 1056)
 			    (865, 1056))
 			line_style 	0)
-		    (object NoteView @250
+		    (object NoteView @257
 			location   	(816, 304)
 			font       	(object Font
 			    size       	9
@@ -5728,7 +5812,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@250
+			    Parent_View 	@257
 			    location   	(38, 29)
 			    fill_color 	13434879
 			    nlines     	11
