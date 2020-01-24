@@ -157,13 +157,13 @@
 		    (object ClassAttribute "GetNalozi()"
 			quid       	"5C16737300FD"
 			exportControl 	"Public")
-		    (object ClassAttribute "ObrisiNalog()"
+		    (object ClassAttribute "ObrisiNalog(Nalog n)"
 			quid       	"5DFE5F06014A"
 			exportControl 	"Public")
-		    (object ClassAttribute "IzmeniNalog()"
+		    (object ClassAttribute "IzmeniNalog(Nalog n)"
 			quid       	"5DFE5F3C0086"
 			exportControl 	"Public")
-		    (object ClassAttribute "DodajNalog()"
+		    (object ClassAttribute "DodajNalog(Nalog n)"
 			quid       	"5DFE5F4B0220"
 			exportControl 	"Public")))
 	    (object Class "ArhiviraniPosao.cs"
@@ -175,7 +175,9 @@
 			exportControl 	"Public")
 		    (object ClassAttribute "GetArhiviraniPoslovi()"
 			quid       	"5C1673CB0046"
-			exportControl 	"Public")))
+			exportControl 	"Public")
+		    (object ClassAttribute "ObrisiArhiviraniPosao(ArhiviraniPosao posao)"
+			quid       	"5E015385010F")))
 	    (object Class "loginForma"
 		quid       	"5C50AD8F0367")
 	    (object Class "promenaLozinke"
@@ -196,21 +198,22 @@
 		    (object ClassAttribute "GetMoguciPoslovi()"
 			quid       	"5DFEBA9F03BB"
 			exportControl 	"Public")
-		    (object ClassAttribute "IzmeniPosao()"
-			quid       	"5DFE5FBA0172"
-			exportControl 	"Public")
-		    (object ClassAttribute "DodajPosao()"
+		    (object ClassAttribute "DodajPosao(MoguciPosao posao)"
 			quid       	"5DFE5FC400F8"
 			exportControl 	"Public")
-		    (object ClassAttribute "IzmeniMoguciPosao()"
+		    (object ClassAttribute "IzmeniMoguciPosao(MoguciPosao posao)"
 			quid       	"5DFE5FCF0276"
 			exportControl 	"Public")
-		    (object ClassAttribute "ProveriImaLiPosao()"
+		    (object ClassAttribute "ProveriImaLiPosao(MoguciPosao posao)"
 			quid       	"5DFE5FD9001F"
 			exportControl 	"Public")
-		    (object ClassAttribute "GetMoguciPosaoi()"
+		    (object ClassAttribute "GetMoguciPosao(MoguciPosao posao)"
 			quid       	"5DFE5FE602E7"
-			exportControl 	"Public")))
+			exportControl 	"Public")
+		    (object ClassAttribute "ObrisiMoguciPosao(MoguciPosao posao)"
+			quid       	"5E0153C401DF")
+		    (object ClassAttribute "GetMoguciPosao(string imeUlice,string tip)"
+			quid       	"5E01541E029E")))
 	    (object Class "NewClass2"
 		quid       	"5DFEBD62009C")
 	    (object Class "Baza"
@@ -222,6 +225,11 @@
 			quid       	"5DFE57540350")))
 	    (object Class "Ulica"
 		quid       	"5DFE58C30060"
+		superclasses 	(list inheritance_relationship_list
+		    (object Inheritance_Relationship
+			quid       	"5E01572F0251"
+			supplier   	"Use Case View::Baza"
+			quidu      	"5DFE57250197"))
 		class_attributes 	(list class_attribute_list
 		    (object ClassAttribute "ImeUlice"
 			quid       	"5DFE592E026D")
@@ -231,13 +239,13 @@
 		quid       	"5DFE5F6C0245"
 		stereotype 	"C#"
 		class_attributes 	(list class_attribute_list
-		    (object ClassAttribute "DodajUlica()"
+		    (object ClassAttribute "DodajUlica(Ulica ulica)"
 			quid       	"5DFE5F88024C"
 			exportControl 	"Public")
 		    (object ClassAttribute "GetUlice()"
 			quid       	"5DFE5F95019E"
 			exportControl 	"Public")
-		    (object ClassAttribute "ProveriImaLiUlica()"
+		    (object ClassAttribute "ProveriImaLiUlica(string imeUlice)"
 			quid       	"5DFE60210257"
 			exportControl 	"Public")))
 	    (object Association "$UNNAMED$0"
@@ -444,6 +452,20 @@
 			label      	"1, n"
 			supplier   	"Use Case View::Nalog"
 			quidu      	"5C1522E7009C")))
+	    (object Association "$UNNAMED$35"
+		quid       	"5E0157360025"
+		roles      	(list role_list
+		    (object Role "1"
+			quid       	"5E01573700C8"
+			label      	"1"
+			supplier   	"Use Case View::Baza"
+			quidu      	"5DFE57250197"
+			is_navigable 	TRUE)
+		    (object Role "1, n"
+			quid       	"5E01573700CC"
+			label      	"1, n"
+			supplier   	"Use Case View::Ulica"
+			quidu      	"5DFE58C30060")))
 	    (object Class_Category "NewPackage"
 		quid       	"5C167F0D0124"
 		exportControl 	"Public"
@@ -458,15 +480,6 @@
 	    (object UseCaseDiagram "Main"
 		quid       	"5C15045F0011"
 		title      	"Main"
-		zoom       	100
-		max_height 	28350
-		max_width  	21600
-		origin_x   	0
-		origin_y   	0
-		items      	(list diagram_item_list))
-	    (object ClassDiagram "Pregled arhitekture"
-		quid       	"5C1504680125"
-		title      	"Pregled arhitekture"
 		zoom       	100
 		max_height 	28350
 		max_width  	21600
@@ -958,60 +971,10 @@
 		zoom       	100
 		max_height 	28350
 		max_width  	21600
-		origin_x   	219
+		origin_x   	550
 		origin_y   	603
 		items      	(list diagram_item_list
-		    (object ClassView "Class" "Use Case View::Ulica" @20
-			ShowCompartmentStereotypes 	TRUE
-			IncludeAttribute 	TRUE
-			IncludeOperation 	TRUE
-			location   	(461, 760)
-			font       	(object Font
-			    size       	10
-			    face       	"Arial"
-			    charSet    	238
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			label      	(object ItemLabel
-			    Parent_View 	@20
-			    location   	(348, 651)
-			    fill_color 	13434879
-			    nlines     	1
-			    max_width  	226
-			    justify    	0
-			    label      	"Ulica")
-			icon_style 	"Icon"
-			line_color 	3342489
-			fill_color 	13434879
-			quidu      	"5DFE58C30060"
-			compartment 	(object Compartment
-			    Parent_View 	@20
-			    location   	(348, 714)
-			    font       	(object Font
-				size       	10
-				face       	"Arial"
-				charSet    	238
-				bold       	FALSE
-				italics    	FALSE
-				underline  	FALSE
-				strike     	FALSE
-				color      	0
-				default_color 	TRUE)
-			    icon_style 	"Icon"
-			    fill_color 	13434879
-			    anchor     	2
-			    nlines     	3
-			    max_width  	223
-			    justify    	1)
-			width      	244
-			height     	244
-			annotation 	8
-			autoResize 	TRUE)
-		    (object ClassView "Class" "Use Case View::MoguciPosao" @21
+		    (object ClassView "Class" "Use Case View::MoguciPosao" @20
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -1027,7 +990,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@21
+			    Parent_View 	@20
 			    location   	(1023, 429)
 			    fill_color 	13434879
 			    nlines     	1
@@ -1039,8 +1002,8 @@
 			fill_color 	13434879
 			quidu      	"5C15229C0265"
 			compartment 	(object Compartment
-			    Parent_View 	@21
-			    location   	(1023, 492)
+			    Parent_View 	@20
+			    location   	(1023, 490)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -1061,111 +1024,7 @@
 			height     	402
 			annotation 	8
 			autoResize 	TRUE)
-		    (object AssociationViewNew "$UNNAMED$30" @22
-			location   	(798, 690)
-			font       	(object Font
-			    size       	10
-			    face       	"Arial"
-			    charSet    	238
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			stereotype 	TRUE
-			line_color 	3342489
-			quidu      	"5DFE5B6F02DD"
-			roleview_list 	(list RoleViews
-			    (object RoleView "1, n" @23
-				Parent_View 	@22
-				location   	(319, -49)
-				font       	(object Font
-				    size       	10
-				    face       	"Arial"
-				    charSet    	238
-				    bold       	FALSE
-				    italics    	FALSE
-				    underline  	FALSE
-				    strike     	FALSE
-				    color      	0
-				    default_color 	TRUE)
-				label      	(object SegLabel @24
-				    Parent_View 	@23
-				    location   	(961, 615)
-				    font       	(object Font
-					size       	10
-					face       	"Arial"
-					charSet    	238
-					bold       	FALSE
-					italics    	FALSE
-					underline  	FALSE
-					strike     	FALSE
-					color      	0
-					default_color 	TRUE)
-				    anchor     	1
-				    anchor_loc 	1
-				    nlines     	1
-				    max_width  	98
-				    justify    	0
-				    label      	"+1, n"
-				    pctDist    	0.800000
-				    height     	42
-				    orientation 	0)
-				stereotype 	TRUE
-				line_color 	3342489
-				quidu      	"5DFE5B700145"
-				client     	@22
-				supplier   	@21
-				vertices   	(list Points
-				    (798, 690)
-				    (1013, 646))
-				line_style 	0)
-			    (object RoleView "1" @25
-				Parent_View 	@22
-				location   	(319, -49)
-				font       	(object Font
-				    size       	10
-				    face       	"Arial"
-				    charSet    	238
-				    bold       	FALSE
-				    italics    	FALSE
-				    underline  	FALSE
-				    strike     	FALSE
-				    color      	0
-				    default_color 	TRUE)
-				label      	(object SegLabel @26
-				    Parent_View 	@25
-				    location   	(621, 685)
-				    font       	(object Font
-					size       	10
-					face       	"Arial"
-					charSet    	238
-					bold       	FALSE
-					italics    	FALSE
-					underline  	FALSE
-					strike     	FALSE
-					color      	0
-					default_color 	TRUE)
-				    anchor     	1
-				    anchor_loc 	1
-				    nlines     	1
-				    max_width  	98
-				    justify    	0
-				    label      	"+1"
-				    pctDist    	0.800000
-				    height     	42
-				    orientation 	1)
-				stereotype 	TRUE
-				line_color 	3342489
-				quidu      	"5DFE5B700149"
-				client     	@22
-				supplier   	@20
-				vertices   	(list Points
-				    (798, 690)
-				    (583, 734))
-				line_style 	0)))
-		    (object ClassView "Class" "Use Case View::ArhiviraniPosao" @27
+		    (object ClassView "Class" "Use Case View::ArhiviraniPosao" @21
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -1181,7 +1040,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@27
+			    Parent_View 	@21
 			    location   	(1765, 419)
 			    fill_color 	13434879
 			    nlines     	1
@@ -1193,8 +1052,8 @@
 			fill_color 	13434879
 			quidu      	"5C15229E01D4"
 			compartment 	(object Compartment
-			    Parent_View 	@27
-			    location   	(1765, 482)
+			    Parent_View 	@21
+			    location   	(1765, 480)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -1215,7 +1074,7 @@
 			height     	298
 			annotation 	8
 			autoResize 	TRUE)
-		    (object AssociationViewNew "$UNNAMED$31" @28
+		    (object AssociationViewNew "$UNNAMED$31" @22
 			location   	(1537, 586)
 			font       	(object Font
 			    size       	10
@@ -1231,8 +1090,8 @@
 			line_color 	3342489
 			quidu      	"5DFE5C71001F"
 			roleview_list 	(list RoleViews
-			    (object RoleView "1, n" @29
-				Parent_View 	@28
+			    (object RoleView "1, n" @23
+				Parent_View 	@22
 				location   	(370, -31)
 				font       	(object Font
 				    size       	10
@@ -1244,8 +1103,8 @@
 				    strike     	FALSE
 				    color      	0
 				    default_color 	TRUE)
-				label      	(object SegLabel @30
-				    Parent_View 	@29
+				label      	(object SegLabel @24
+				    Parent_View 	@23
 				    location   	(1708, 531)
 				    font       	(object Font
 					size       	10
@@ -1269,14 +1128,14 @@
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5DFE5C7101D2"
-				client     	@28
-				supplier   	@27
+				client     	@22
+				supplier   	@21
 				vertices   	(list Points
 				    (1537, 586)
 				    (1755, 568))
 				line_style 	0)
-			    (object RoleView "1" @31
-				Parent_View 	@28
+			    (object RoleView "1" @25
+				Parent_View 	@22
 				location   	(370, -31)
 				font       	(object Font
 				    size       	10
@@ -1288,8 +1147,8 @@
 				    strike     	FALSE
 				    color      	0
 				    default_color 	TRUE)
-				label      	(object SegLabel @32
-				    Parent_View 	@31
+				label      	(object SegLabel @26
+				    Parent_View 	@25
 				    location   	(1362, 559)
 				    font       	(object Font
 					size       	10
@@ -1313,13 +1172,13 @@
 				stereotype 	TRUE
 				line_color 	3342489
 				quidu      	"5DFE5C7101D5"
-				client     	@28
-				supplier   	@21
+				client     	@22
+				supplier   	@20
 				vertices   	(list Points
 				    (1537, 586)
-				    (1320, 604))
+				    (1320, 603))
 				line_style 	0)))
-		    (object ClassView "Class" "Use Case View::Nalog" @33
+		    (object ClassView "Class" "Use Case View::Nalog" @27
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -1335,7 +1194,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@33
+			    Parent_View 	@27
 			    location   	(2474, 591)
 			    fill_color 	13434879
 			    nlines     	1
@@ -1347,8 +1206,8 @@
 			fill_color 	13434879
 			quidu      	"5C1522E7009C"
 			compartment 	(object Compartment
-			    Parent_View 	@33
-			    location   	(2474, 654)
+			    Parent_View 	@27
+			    location   	(2474, 652)
 			    font       	(object Font
 				size       	10
 				face       	"Arial"
@@ -1369,6 +1228,160 @@
 			height     	346
 			annotation 	8
 			autoResize 	TRUE)
+		    (object ClassView "Class" "Use Case View::Ulica" @28
+			ShowCompartmentStereotypes 	TRUE
+			IncludeAttribute 	TRUE
+			IncludeOperation 	TRUE
+			location   	(461, 760)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	238
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@28
+			    location   	(348, 651)
+			    fill_color 	13434879
+			    nlines     	1
+			    max_width  	226
+			    justify    	0
+			    label      	"Ulica")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5DFE58C30060"
+			compartment 	(object Compartment
+			    Parent_View 	@28
+			    location   	(348, 712)
+			    font       	(object Font
+				size       	10
+				face       	"Arial"
+				charSet    	238
+				bold       	FALSE
+				italics    	FALSE
+				underline  	FALSE
+				strike     	FALSE
+				color      	0
+				default_color 	TRUE)
+			    icon_style 	"Icon"
+			    fill_color 	13434879
+			    anchor     	2
+			    nlines     	3
+			    max_width  	223
+			    justify    	1)
+			width      	244
+			height     	244
+			annotation 	8
+			autoResize 	TRUE)
+		    (object AssociationViewNew "$UNNAMED$30" @29
+			location   	(798, 690)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	238
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5DFE5B6F02DD"
+			roleview_list 	(list RoleViews
+			    (object RoleView "1, n" @30
+				Parent_View 	@29
+				location   	(319, -49)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	238
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @31
+				    Parent_View 	@30
+				    location   	(961, 615)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	238
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	1
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	98
+				    justify    	0
+				    label      	"+1, n"
+				    pctDist    	0.800000
+				    height     	42
+				    orientation 	0)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DFE5B700145"
+				client     	@29
+				supplier   	@20
+				vertices   	(list Points
+				    (798, 690)
+				    (1013, 646))
+				line_style 	0)
+			    (object RoleView "1" @32
+				Parent_View 	@29
+				location   	(319, -49)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	238
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @33
+				    Parent_View 	@32
+				    location   	(621, 685)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	238
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	1
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	98
+				    justify    	0
+				    label      	"+1"
+				    pctDist    	0.800000
+				    height     	42
+				    orientation 	1)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5DFE5B700149"
+				client     	@29
+				supplier   	@28
+				vertices   	(list Points
+				    (798, 690)
+				    (583, 733))
+				line_style 	0)))
 		    (object ClassView "Class" "Use Case View::Baza" @34
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
@@ -1518,7 +1531,7 @@
 				line_color 	3342489
 				quidu      	"5DFE5CA90233"
 				client     	@35
-				supplier   	@21
+				supplier   	@20
 				vertices   	(list Points
 				    (1582, 1010)
 				    (1320, 762))
@@ -1622,7 +1635,7 @@
 				line_color 	3342489
 				quidu      	"5DFE5CAC030F"
 				client     	@40
-				supplier   	@27
+				supplier   	@21
 				vertices   	(list Points
 				    (1949, 981)
 				    (1933, 704))
@@ -1685,7 +1698,7 @@
 				supplier   	@34
 				vertices   	(list Points
 				    (2281, 1078)
-				    (2098, 1258))
+				    (2096, 1258))
 				line_style 	0)
 			    (object RoleView "1, n" @48
 				Parent_View 	@45
@@ -1726,10 +1739,114 @@
 				line_color 	3342489
 				quidu      	"5DFE5CAE03CC"
 				client     	@45
-				supplier   	@33
+				supplier   	@27
 				vertices   	(list Points
 				    (2281, 1078)
-				    (2464, 898))
+				    (2464, 896))
+				line_style 	0)))
+		    (object AssociationViewNew "$UNNAMED$35" @50
+			location   	(1178, 1053)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	238
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5E0157360025"
+			roleview_list 	(list RoleViews
+			    (object RoleView "1" @51
+				Parent_View 	@50
+				location   	(717, 293)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	238
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @52
+				    Parent_View 	@51
+				    location   	(1669, 1210)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	238
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	1
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	88
+				    justify    	0
+				    label      	"+1"
+				    pctDist    	0.800000
+				    height     	42
+				    orientation 	0)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5E01573700C8"
+				client     	@50
+				supplier   	@34
+				vertices   	(list Points
+				    (1178, 1053)
+				    (1774, 1298))
+				line_style 	0)
+			    (object RoleView "1, n" @53
+				Parent_View 	@50
+				location   	(717, 293)
+				font       	(object Font
+				    size       	10
+				    face       	"Arial"
+				    charSet    	238
+				    bold       	FALSE
+				    italics    	FALSE
+				    underline  	FALSE
+				    strike     	FALSE
+				    color      	0
+				    default_color 	TRUE)
+				label      	(object SegLabel @54
+				    Parent_View 	@53
+				    location   	(719, 819)
+				    font       	(object Font
+					size       	10
+					face       	"Arial"
+					charSet    	238
+					bold       	FALSE
+					italics    	FALSE
+					underline  	FALSE
+					strike     	FALSE
+					color      	0
+					default_color 	TRUE)
+				    anchor     	1
+				    anchor_loc 	1
+				    nlines     	1
+				    max_width  	116
+				    justify    	0
+				    label      	"+1, n"
+				    pctDist    	0.800000
+				    height     	42
+				    orientation 	1)
+				stereotype 	TRUE
+				line_color 	3342489
+				quidu      	"5E01573700CC"
+				client     	@50
+				supplier   	@28
+				vertices   	(list Points
+				    (1178, 1053)
+				    (583, 808))
 				line_style 	0)))))
 	    (object ClassDiagram "pristupPodacimaDirektor"
 		quid       	"5C1672BD0276"
@@ -1737,14 +1854,14 @@
 		zoom       	100
 		max_height 	28350
 		max_width  	21600
-		origin_x   	187
+		origin_x   	0
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object ClassView "Class" "Use Case View::Nalog.cs" @50
+		    (object ClassView "Class" "Use Case View::Nalog.cs" @55
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
-			location   	(389, 787)
+			location   	(420, 637)
 			font       	(object Font
 			    size       	16
 			    face       	"Arial"
@@ -1756,20 +1873,20 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@50
-			    location   	(169, 578)
+			    Parent_View 	@55
+			    location   	(92, 428)
 			    fill_color 	13434879
 			    nlines     	1
-			    max_width  	440
+			    max_width  	656
 			    justify    	0
 			    label      	"Nalog.cs")
 			stereotype 	(object ItemLabel
-			    Parent_View 	@50
-			    location   	(169, 528)
+			    Parent_View 	@55
+			    location   	(92, 378)
 			    fill_color 	13434879
 			    anchor     	10
 			    nlines     	1
-			    max_width  	440
+			    max_width  	656
 			    justify    	0
 			    label      	"<<C#>>")
 			icon_style 	"Icon"
@@ -1777,8 +1894,8 @@
 			fill_color 	13434879
 			quidu      	"5C167325002E"
 			compartment 	(object Compartment
-			    Parent_View 	@50
-			    location   	(169, 664)
+			    Parent_View 	@55
+			    location   	(92, 514)
 			    font       	(object Font
 				size       	16
 				face       	"Arial"
@@ -1793,17 +1910,17 @@
 			    fill_color 	16777215
 			    anchor     	2
 			    nlines     	5
-			    max_width  	437
+			    max_width  	653
 			    justify    	1)
-			width      	458
+			width      	674
 			height     	554
 			annotation 	8
 			autoResize 	TRUE)
-		    (object ClassView "Class" "Use Case View::ArhiviraniPosao.cs" @51
+		    (object ClassView "Class" "Use Case View::ArhiviraniPosao.cs" @56
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
-			location   	(2710, 851)
+			location   	(3817, 561)
 			font       	(object Font
 			    size       	16
 			    face       	"Arial"
@@ -1815,20 +1932,20 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@51
-			    location   	(2028, 717)
+			    Parent_View 	@56
+			    location   	(3133, 390)
 			    fill_color 	13434879
 			    nlines     	1
-			    max_width  	1364
+			    max_width  	1368
 			    justify    	0
 			    label      	"ArhiviraniPosao.cs")
 			stereotype 	(object ItemLabel
-			    Parent_View 	@51
-			    location   	(2028, 667)
+			    Parent_View 	@56
+			    location   	(3133, 340)
 			    fill_color 	13434879
 			    anchor     	10
 			    nlines     	1
-			    max_width  	1364
+			    max_width  	1368
 			    justify    	0
 			    label      	"<<C#>>")
 			icon_style 	"Icon"
@@ -1836,8 +1953,8 @@
 			fill_color 	13434879
 			quidu      	"5C1673B20391"
 			compartment 	(object Compartment
-			    Parent_View 	@51
-			    location   	(2028, 803)
+			    Parent_View 	@56
+			    location   	(3133, 476)
 			    font       	(object Font
 				size       	16
 				face       	"Arial"
@@ -1851,18 +1968,18 @@
 			    icon_style 	"Icon"
 			    fill_color 	16777215
 			    anchor     	2
-			    nlines     	3
-			    max_width  	1362
+			    nlines     	4
+			    max_width  	1366
 			    justify    	1)
-			width      	1382
-			height     	404
+			width      	1386
+			height     	478
 			annotation 	8
 			autoResize 	TRUE)
-		    (object ClassView "Class" "Use Case View::MoguciPosao.cs" @52
+		    (object ClassView "Class" "Use Case View::MoguciPosao.cs" @57
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
-			location   	(1639, 845)
+			location   	(2458, 582)
 			font       	(object Font
 			    size       	16
 			    face       	"Arial"
@@ -1874,20 +1991,20 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@52
-			    location   	(1303, 524)
+			    Parent_View 	@57
+			    location   	(1822, 223)
 			    fill_color 	13434879
 			    nlines     	1
-			    max_width  	672
+			    max_width  	1272
 			    justify    	0
 			    label      	"MoguciPosao.cs")
 			stereotype 	(object ItemLabel
-			    Parent_View 	@52
-			    location   	(1303, 474)
+			    Parent_View 	@57
+			    location   	(1822, 173)
 			    fill_color 	13434879
 			    anchor     	10
 			    nlines     	1
-			    max_width  	672
+			    max_width  	1272
 			    justify    	0
 			    label      	"<<C#>>")
 			icon_style 	"Icon"
@@ -1895,8 +2012,8 @@
 			fill_color 	13434879
 			quidu      	"5C50B9570252"
 			compartment 	(object Compartment
-			    Parent_View 	@52
-			    location   	(1303, 610)
+			    Parent_View 	@57
+			    location   	(1822, 309)
 			    font       	(object Font
 				size       	16
 				face       	"Arial"
@@ -1910,18 +2027,18 @@
 			    icon_style 	"Icon"
 			    fill_color 	16777215
 			    anchor     	2
-			    nlines     	8
-			    max_width  	669
+			    nlines     	9
+			    max_width  	1269
 			    justify    	1)
-			width      	690
-			height     	778
+			width      	1290
+			height     	854
 			annotation 	8
 			autoResize 	TRUE)
-		    (object ClassView "Class" "Use Case View::Ulica.cs" @53
+		    (object ClassView "Class" "Use Case View::Ulica.cs" @58
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
-			location   	(953, 837)
+			location   	(1280, 608)
 			font       	(object Font
 			    size       	16
 			    face       	"Arial"
@@ -1933,20 +2050,20 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@53
-			    location   	(653, 666)
+			    Parent_View 	@58
+			    location   	(771, 437)
 			    fill_color 	13434879
 			    nlines     	1
-			    max_width  	600
+			    max_width  	1018
 			    justify    	0
 			    label      	"Ulica.cs")
 			stereotype 	(object ItemLabel
-			    Parent_View 	@53
-			    location   	(653, 616)
+			    Parent_View 	@58
+			    location   	(771, 387)
 			    fill_color 	13434879
 			    anchor     	10
 			    nlines     	1
-			    max_width  	600
+			    max_width  	1018
 			    justify    	0
 			    label      	"<<C#>>")
 			icon_style 	"Icon"
@@ -1954,8 +2071,8 @@
 			fill_color 	13434879
 			quidu      	"5DFE5F6C0245"
 			compartment 	(object Compartment
-			    Parent_View 	@53
-			    location   	(653, 752)
+			    Parent_View 	@58
+			    location   	(771, 523)
 			    font       	(object Font
 				size       	16
 				face       	"Arial"
@@ -1970,9 +2087,9 @@
 			    fill_color 	13434879
 			    anchor     	2
 			    nlines     	4
-			    max_width  	597
+			    max_width  	1016
 			    justify    	1)
-			width      	618
+			width      	1036
 			height     	478
 			annotation 	8
 			autoResize 	TRUE)))
@@ -1982,10 +2099,10 @@
 		zoom       	100
 		max_height 	28350
 		max_width  	21600
-		origin_x   	133
+		origin_x   	1175
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object ClassView "Class" "Use Case View::MoguciPosao.cs" @54
+		    (object ClassView "Class" "Use Case View::MoguciPosao.cs" @59
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -2001,20 +2118,20 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@54
-			    location   	(1899, 568)
+			    Parent_View 	@59
+			    location   	(1599, 530)
 			    fill_color 	13434879
 			    nlines     	1
-			    max_width  	672
+			    max_width  	1272
 			    justify    	0
 			    label      	"MoguciPosao.cs")
 			stereotype 	(object ItemLabel
-			    Parent_View 	@54
-			    location   	(1899, 518)
+			    Parent_View 	@59
+			    location   	(1599, 480)
 			    fill_color 	13434879
 			    anchor     	10
 			    nlines     	1
-			    max_width  	672
+			    max_width  	1272
 			    justify    	0
 			    label      	"<<C#>>")
 			icon_style 	"Icon"
@@ -2022,8 +2139,8 @@
 			fill_color 	13434879
 			quidu      	"5C50B9570252"
 			compartment 	(object Compartment
-			    Parent_View 	@54
-			    location   	(1899, 654)
+			    Parent_View 	@59
+			    location   	(1599, 616)
 			    font       	(object Font
 				size       	16
 				face       	"Arial"
@@ -2037,14 +2154,14 @@
 			    icon_style 	"Icon"
 			    fill_color 	16777215
 			    anchor     	2
-			    nlines     	8
-			    max_width  	669
+			    nlines     	9
+			    max_width  	1269
 			    justify    	1)
-			width      	690
-			height     	778
+			width      	1290
+			height     	854
 			annotation 	8
 			autoResize 	TRUE)
-		    (object ClassView "Class" "Use Case View::Nalog.cs" @55
+		    (object ClassView "Class" "Use Case View::Nalog.cs" @60
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
@@ -2060,20 +2177,20 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@55
-			    location   	(535, 673)
+			    Parent_View 	@60
+			    location   	(427, 672)
 			    fill_color 	13434879
 			    nlines     	1
-			    max_width  	440
+			    max_width  	656
 			    justify    	0
 			    label      	"Nalog.cs")
 			stereotype 	(object ItemLabel
-			    Parent_View 	@55
-			    location   	(535, 623)
+			    Parent_View 	@60
+			    location   	(427, 622)
 			    fill_color 	13434879
 			    anchor     	10
 			    nlines     	1
-			    max_width  	440
+			    max_width  	656
 			    justify    	0
 			    label      	"<<C#>>")
 			icon_style 	"Icon"
@@ -2081,8 +2198,8 @@
 			fill_color 	13434879
 			quidu      	"5C167325002E"
 			compartment 	(object Compartment
-			    Parent_View 	@55
-			    location   	(535, 759)
+			    Parent_View 	@60
+			    location   	(427, 758)
 			    font       	(object Font
 				size       	16
 				face       	"Arial"
@@ -2097,17 +2214,17 @@
 			    fill_color 	16777215
 			    anchor     	2
 			    nlines     	5
-			    max_width  	438
+			    max_width  	653
 			    justify    	1)
-			width      	458
-			height     	552
+			width      	674
+			height     	554
 			annotation 	8
 			autoResize 	TRUE)
-		    (object ClassView "Class" "Use Case View::Ulica" @56
+		    (object ClassView "Class" "Use Case View::Ulica" @61
 			ShowCompartmentStereotypes 	TRUE
 			IncludeAttribute 	TRUE
 			IncludeOperation 	TRUE
-			location   	(1469, 872)
+			location   	(1362, 837)
 			font       	(object Font
 			    size       	16
 			    face       	"Arial"
@@ -2119,8 +2236,8 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@56
-			    location   	(1291, 709)
+			    Parent_View 	@61
+			    location   	(1184, 674)
 			    fill_color 	13434879
 			    nlines     	1
 			    max_width  	357
@@ -2131,8 +2248,8 @@
 			fill_color 	13434879
 			quidu      	"5DFE58C30060"
 			compartment 	(object Compartment
-			    Parent_View 	@56
-			    location   	(1291, 795)
+			    Parent_View 	@61
+			    location   	(1184, 760)
 			    font       	(object Font
 				size       	16
 				face       	"Arial"
@@ -2152,7 +2269,257 @@
 			width      	375
 			height     	363
 			annotation 	8
-			autoResize 	TRUE)))))
+			autoResize 	TRUE)))
+	    (object ClassDiagram "Pregled arhitekture"
+		quid       	"5C15045F000F"
+		title      	"Pregled arhitekture"
+		zoom       	100
+		max_height 	28350
+		max_width  	21600
+		origin_x   	0
+		origin_y   	0
+		items      	(list diagram_item_list
+		    (object CategoryView "Logical View::Korisnicki intefejs" @62
+			location   	(969, 481)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	238
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@62
+			    location   	(801, 430)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	336
+			    justify    	0
+			    label      	"Korisnicki intefejs")
+			stereotype 	(object ItemLabel
+			    Parent_View 	@62
+			    location   	(801, 380)
+			    fill_color 	13434879
+			    anchor     	10
+			    nlines     	1
+			    max_width  	336
+			    justify    	0
+			    label      	"<<sloj>>")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5C1504870343"
+			width      	348
+			height     	214)
+		    (object CategoryView "Logical View::Aplikaciona logika" @63
+			location   	(972, 922)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	238
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@63
+			    location   	(804, 871)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	336
+			    justify    	0
+			    label      	"Aplikaciona logika")
+			stereotype 	(object ItemLabel
+			    Parent_View 	@63
+			    location   	(804, 821)
+			    fill_color 	13434879
+			    anchor     	10
+			    nlines     	1
+			    max_width  	336
+			    justify    	0
+			    label      	"<<sloj>>")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5C150492001A"
+			width      	348
+			height     	214)
+		    (object CategoryView "Logical View::Pristup podacima" @64
+			location   	(969, 1372)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	238
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@64
+			    location   	(801, 1321)
+			    fill_color 	13434879
+			    nlines     	2
+			    max_width  	336
+			    justify    	0
+			    label      	"Pristup podacima")
+			stereotype 	(object ItemLabel
+			    Parent_View 	@64
+			    location   	(801, 1271)
+			    fill_color 	13434879
+			    anchor     	10
+			    nlines     	1
+			    max_width  	336
+			    justify    	0
+			    label      	"<<sloj>>")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	13434879
+			quidu      	"5C150495027C"
+			width      	348
+			height     	214)
+		    (object CategoryView "Logical View::C\\#" @65
+			location   	(2009, 662)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	238
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@65
+			    location   	(1841, 627)
+			    nlines     	2
+			    max_width  	336
+			    justify    	0
+			    label      	"C#")
+			stereotype 	(object ItemLabel
+			    Parent_View 	@65
+			    location   	(1841, 577)
+			    anchor     	10
+			    nlines     	1
+			    max_width  	336
+			    justify    	0
+			    label      	"<<tehnologija>>")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	16777215
+			quidu      	"5C15049701A2"
+			width      	348
+			height     	182)
+		    (object CategoryView "Logical View::Microsoft Access" @66
+			location   	(1996, 1112)
+			font       	(object Font
+			    size       	10
+			    face       	"Arial"
+			    charSet    	238
+			    bold       	FALSE
+			    italics    	FALSE
+			    underline  	FALSE
+			    strike     	FALSE
+			    color      	0
+			    default_color 	TRUE)
+			label      	(object ItemLabel
+			    Parent_View 	@66
+			    location   	(1828, 1061)
+			    nlines     	2
+			    max_width  	336
+			    justify    	0
+			    label      	"Microsoft Access")
+			stereotype 	(object ItemLabel
+			    Parent_View 	@66
+			    location   	(1828, 1011)
+			    anchor     	10
+			    nlines     	1
+			    max_width  	336
+			    justify    	0
+			    label      	"<<tehnologija>>")
+			icon_style 	"Icon"
+			line_color 	3342489
+			fill_color 	16777215
+			quidu      	"5C1504990165"
+			width      	348
+			height     	214)
+		    (object ImportView "" @67
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5C15059902F2"
+			client     	@62
+			supplier   	@63
+			vertices   	(list Points
+			    (969, 588)
+			    (970, 760))
+			line_style 	0)
+		    (object ImportView "" @68
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5C15059D03B2"
+			client     	@63
+			supplier   	@64
+			vertices   	(list Points
+			    (971, 1029)
+			    (969, 1210))
+			line_style 	0)
+		    (object ImportView "" @69
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5C1505A101E3"
+			client     	@62
+			supplier   	@65
+			vertices   	(list Points
+			    (1143, 510)
+			    (1834, 630))
+			line_style 	0)
+		    (object ImportView "" @70
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5C1505A30393"
+			client     	@63
+			supplier   	@65
+			vertices   	(list Points
+			    (1146, 877)
+			    (1834, 705))
+			line_style 	0)
+		    (object ImportView "" @71
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5C1505A6019B"
+			client     	@64
+			supplier   	@65
+			vertices   	(list Points
+			    (1143, 1251)
+			    (1872, 753))
+			line_style 	0)
+		    (object ImportView "" @72
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5C1505AA035B"
+			client     	@64
+			supplier   	@66
+			vertices   	(list Points
+			    (1143, 1327)
+			    (1821, 1155))
+			line_style 	0)
+		    (object ImportView "" @73
+			stereotype 	TRUE
+			line_color 	3342489
+			quidu      	"5C1505AD0332"
+			client     	@65
+			supplier   	@66
+			vertices   	(list Points
+			    (2005, 753)
+			    (1999, 950))
+			line_style 	0)))))
     root_category 	(object Class_Category "Logical View"
 	quid       	"5C15045F0009"
 	exportControl 	"Public"
@@ -2233,257 +2600,7 @@
 		exportControl 	"Public"
 		logical_models 	(list unit_reference_list)
 		logical_presentations 	(list unit_reference_list)))
-	logical_presentations 	(list unit_reference_list
-	    (object ClassDiagram "Main"
-		quid       	"5C15045F000F"
-		title      	"Main"
-		zoom       	100
-		max_height 	28350
-		max_width  	21600
-		origin_x   	0
-		origin_y   	0
-		items      	(list diagram_item_list
-		    (object CategoryView "Logical View::Korisnicki intefejs" @57
-			location   	(969, 481)
-			font       	(object Font
-			    size       	10
-			    face       	"Arial"
-			    charSet    	238
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			label      	(object ItemLabel
-			    Parent_View 	@57
-			    location   	(825, 446)
-			    fill_color 	13434879
-			    nlines     	2
-			    max_width  	288
-			    justify    	0
-			    label      	"Korisnicki intefejs")
-			stereotype 	(object ItemLabel
-			    Parent_View 	@57
-			    location   	(825, 396)
-			    fill_color 	13434879
-			    anchor     	10
-			    nlines     	1
-			    max_width  	288
-			    justify    	0
-			    label      	"<<sloj>>")
-			icon_style 	"Icon"
-			line_color 	3342489
-			fill_color 	13434879
-			quidu      	"5C1504870343"
-			width      	300
-			height     	182)
-		    (object CategoryView "Logical View::Aplikaciona logika" @58
-			location   	(972, 922)
-			font       	(object Font
-			    size       	10
-			    face       	"Arial"
-			    charSet    	238
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			label      	(object ItemLabel
-			    Parent_View 	@58
-			    location   	(828, 887)
-			    fill_color 	13434879
-			    nlines     	2
-			    max_width  	288
-			    justify    	0
-			    label      	"Aplikaciona logika")
-			stereotype 	(object ItemLabel
-			    Parent_View 	@58
-			    location   	(828, 837)
-			    fill_color 	13434879
-			    anchor     	10
-			    nlines     	1
-			    max_width  	288
-			    justify    	0
-			    label      	"<<sloj>>")
-			icon_style 	"Icon"
-			line_color 	3342489
-			fill_color 	13434879
-			quidu      	"5C150492001A"
-			width      	300
-			height     	182)
-		    (object CategoryView "Logical View::Pristup podacima" @59
-			location   	(969, 1372)
-			font       	(object Font
-			    size       	10
-			    face       	"Arial"
-			    charSet    	238
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			label      	(object ItemLabel
-			    Parent_View 	@59
-			    location   	(825, 1337)
-			    fill_color 	13434879
-			    nlines     	2
-			    max_width  	288
-			    justify    	0
-			    label      	"Pristup podacima")
-			stereotype 	(object ItemLabel
-			    Parent_View 	@59
-			    location   	(825, 1287)
-			    fill_color 	13434879
-			    anchor     	10
-			    nlines     	1
-			    max_width  	288
-			    justify    	0
-			    label      	"<<sloj>>")
-			icon_style 	"Icon"
-			line_color 	3342489
-			fill_color 	13434879
-			quidu      	"5C150495027C"
-			width      	300
-			height     	182)
-		    (object CategoryView "Logical View::C\\#" @60
-			location   	(2009, 662)
-			font       	(object Font
-			    size       	10
-			    face       	"Arial"
-			    charSet    	238
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			label      	(object ItemLabel
-			    Parent_View 	@60
-			    location   	(1858, 627)
-			    nlines     	2
-			    max_width  	302
-			    justify    	0
-			    label      	"C#")
-			stereotype 	(object ItemLabel
-			    Parent_View 	@60
-			    location   	(1858, 577)
-			    anchor     	10
-			    nlines     	1
-			    max_width  	302
-			    justify    	0
-			    label      	"<<tehnologija>>")
-			icon_style 	"Icon"
-			line_color 	3342489
-			fill_color 	16777215
-			quidu      	"5C15049701A2"
-			width      	314
-			height     	182)
-		    (object CategoryView "Logical View::Microsoft Access" @61
-			location   	(1996, 1112)
-			font       	(object Font
-			    size       	10
-			    face       	"Arial"
-			    charSet    	238
-			    bold       	FALSE
-			    italics    	FALSE
-			    underline  	FALSE
-			    strike     	FALSE
-			    color      	0
-			    default_color 	TRUE)
-			label      	(object ItemLabel
-			    Parent_View 	@61
-			    location   	(1845, 1077)
-			    nlines     	2
-			    max_width  	302
-			    justify    	0
-			    label      	"Microsoft Access")
-			stereotype 	(object ItemLabel
-			    Parent_View 	@61
-			    location   	(1845, 1027)
-			    anchor     	10
-			    nlines     	1
-			    max_width  	302
-			    justify    	0
-			    label      	"<<tehnologija>>")
-			icon_style 	"Icon"
-			line_color 	3342489
-			fill_color 	16777215
-			quidu      	"5C1504990165"
-			width      	314
-			height     	182)
-		    (object ImportView "" @62
-			stereotype 	TRUE
-			line_color 	3342489
-			quidu      	"5C15059902F2"
-			client     	@57
-			supplier   	@58
-			vertices   	(list Points
-			    (969, 572)
-			    (970, 776))
-			line_style 	0)
-		    (object ImportView "" @63
-			stereotype 	TRUE
-			line_color 	3342489
-			quidu      	"5C15059D03B2"
-			client     	@58
-			supplier   	@59
-			vertices   	(list Points
-			    (971, 1013)
-			    (969, 1226))
-			line_style 	0)
-		    (object ImportView "" @64
-			stereotype 	TRUE
-			line_color 	3342489
-			quidu      	"5C1505A101E3"
-			client     	@57
-			supplier   	@60
-			vertices   	(list Points
-			    (1119, 505)
-			    (1851, 633))
-			line_style 	0)
-		    (object ImportView "" @65
-			stereotype 	TRUE
-			line_color 	3342489
-			quidu      	"5C1505A30393"
-			client     	@58
-			supplier   	@60
-			vertices   	(list Points
-			    (1122, 883)
-			    (1851, 700))
-			line_style 	0)
-		    (object ImportView "" @66
-			stereotype 	TRUE
-			line_color 	3342489
-			quidu      	"5C1505A6019B"
-			client     	@59
-			supplier   	@60
-			vertices   	(list Points
-			    (1119, 1268)
-			    (1872, 753))
-			line_style 	0)
-		    (object ImportView "" @67
-			stereotype 	TRUE
-			line_color 	3342489
-			quidu      	"5C1505AA035B"
-			client     	@59
-			supplier   	@61
-			vertices   	(list Points
-			    (1119, 1333)
-			    (1838, 1151))
-			line_style 	0)
-		    (object ImportView "" @68
-			stereotype 	TRUE
-			line_color 	3342489
-			quidu      	"5C1505AD0332"
-			client     	@60
-			supplier   	@61
-			vertices   	(list Points
-			    (2005, 753)
-			    (1999, 966))
-			line_style 	0)))))
+	logical_presentations 	(list unit_reference_list))
     root_subsystem 	(object SubSystem "Component View"
 	quid       	"5C15045F000B"
 	physical_models 	(list unit_reference_list
@@ -2559,7 +2676,7 @@
 		origin_x   	1951
 		origin_y   	1325
 		items      	(list diagram_item_list
-		    (object ModView "Component View::Login.xaml" "NotAModuleType" "NotAModulePart" @69
+		    (object ModView "Component View::Login.xaml" "NotAModuleType" "NotAModulePart" @74
 			location   	(2519, 2469)
 			font       	(object Font
 			    size       	16
@@ -2572,7 +2689,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@69
+			    Parent_View 	@74
 			    location   	(2384, 2483)
 			    anchor_loc 	3
 			    nlines     	2
@@ -2580,7 +2697,7 @@
 			    justify    	1
 			    label      	"Login.xaml")
 			stereotype 	(object ItemLabel
-			    Parent_View 	@69
+			    Parent_View 	@74
 			    location   	(2384, 2387)
 			    anchor     	10
 			    anchor_loc 	3
@@ -2598,7 +2715,7 @@
 			autoResize 	TRUE
 			width      	926
 			height     	234)
-		    (object ModView "Component View::MainWindow.xaml" "NotAModuleType" "NotAModulePart" @70
+		    (object ModView "Component View::MainWindow.xaml" "NotAModuleType" "NotAModulePart" @75
 			location   	(2504, 2027)
 			font       	(object Font
 			    size       	16
@@ -2611,7 +2728,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@70
+			    Parent_View 	@75
 			    location   	(2321, 2037)
 			    fill_color 	13434879
 			    anchor_loc 	3
@@ -2620,7 +2737,7 @@
 			    justify    	1
 			    label      	"MainWindow.xaml")
 			stereotype 	(object ItemLabel
-			    Parent_View 	@70
+			    Parent_View 	@75
 			    location   	(2321, 1941)
 			    fill_color 	13434879
 			    anchor     	10
@@ -2639,17 +2756,17 @@
 			autoResize 	TRUE
 			width      	1257
 			height     	264)
-		    (object ModVisView "" @71
+		    (object ModVisView "" @76
 			stereotype 	TRUE
 			line_color 	3342489
 			quidu      	"5C166AD3000C"
-			client     	@69
-			supplier   	@70
+			client     	@74
+			supplier   	@75
 			vertices   	(list Points
 			    (2506, 2355)
 			    (2504, 2152))
 			line_style 	0)
-		    (object ModView "Component View::Registracija.xaml" "NotAModuleType" "NotAModulePart" @72
+		    (object ModView "Component View::Registracija.xaml" "NotAModuleType" "NotAModulePart" @77
 			location   	(3914, 1223)
 			font       	(object Font
 			    size       	16
@@ -2662,7 +2779,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@72
+			    Parent_View 	@77
 			    location   	(3746, 1226)
 			    fill_color 	13434879
 			    anchor_loc 	3
@@ -2671,7 +2788,7 @@
 			    justify    	1
 			    label      	"Registracija.xaml")
 			stereotype 	(object ItemLabel
-			    Parent_View 	@72
+			    Parent_View 	@77
 			    location   	(3746, 1130)
 			    fill_color 	13434879
 			    anchor     	10
@@ -2690,7 +2807,7 @@
 			autoResize 	TRUE
 			width      	1152
 			height     	316)
-		    (object ModView "Component View::Arhiva.xaml" "NotAModuleType" "NotAModulePart" @73
+		    (object ModView "Component View::Arhiva.xaml" "NotAModuleType" "NotAModulePart" @78
 			location   	(2497, 1525)
 			font       	(object Font
 			    size       	16
@@ -2703,7 +2820,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@73
+			    Parent_View 	@78
 			    location   	(2334, 1532)
 			    fill_color 	13434879
 			    anchor_loc 	3
@@ -2712,7 +2829,7 @@
 			    justify    	1
 			    label      	"Arhiva.xaml")
 			stereotype 	(object ItemLabel
-			    Parent_View 	@73
+			    Parent_View 	@78
 			    location   	(2334, 1436)
 			    fill_color 	13434879
 			    anchor     	10
@@ -2731,7 +2848,7 @@
 			autoResize 	TRUE
 			width      	1122
 			height     	286)
-		    (object ModView "Component View::Account.xaml" "NotAModuleType" "NotAModulePart" @74
+		    (object ModView "Component View::Account.xaml" "NotAModuleType" "NotAModulePart" @79
 			location   	(3611, 1688)
 			font       	(object Font
 			    size       	16
@@ -2744,7 +2861,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@74
+			    Parent_View 	@79
 			    location   	(3445, 1699)
 			    fill_color 	13434879
 			    anchor_loc 	3
@@ -2753,7 +2870,7 @@
 			    justify    	1
 			    label      	"Account.xaml")
 			stereotype 	(object ItemLabel
-			    Parent_View 	@74
+			    Parent_View 	@79
 			    location   	(3445, 1603)
 			    fill_color 	13434879
 			    anchor     	10
@@ -2772,7 +2889,7 @@
 			autoResize 	TRUE
 			width      	1137
 			height     	256)
-		    (object ModView "Component View::Lista.xaml" "NotAModuleType" "NotAModulePart" @75
+		    (object ModView "Component View::Lista.xaml" "NotAModuleType" "NotAModulePart" @80
 			location   	(1582, 1664)
 			font       	(object Font
 			    size       	16
@@ -2785,7 +2902,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@75
+			    Parent_View 	@80
 			    location   	(1456, 1675)
 			    fill_color 	13434879
 			    anchor_loc 	3
@@ -2794,7 +2911,7 @@
 			    justify    	1
 			    label      	"Lista.xaml")
 			stereotype 	(object ItemLabel
-			    Parent_View 	@75
+			    Parent_View 	@80
 			    location   	(1456, 1579)
 			    fill_color 	13434879
 			    anchor     	10
@@ -2813,47 +2930,47 @@
 			autoResize 	TRUE
 			width      	866
 			height     	256)
-		    (object ModVisView "" @76
+		    (object ModVisView "" @81
 			stereotype 	TRUE
 			line_color 	3342489
 			quidu      	"5C50B8380059"
-			client     	@70
-			supplier   	@75
+			client     	@75
+			supplier   	@80
 			vertices   	(list Points
 			    (2167, 1897)
 			    (1893, 1786))
 			line_style 	0)
-		    (object ModVisView "" @77
+		    (object ModVisView "" @82
 			stereotype 	TRUE
 			line_color 	3342489
 			quidu      	"5C166F8900D9"
-			client     	@70
-			supplier   	@73
+			client     	@75
+			supplier   	@78
 			vertices   	(list Points
 			    (2492, 1899)
 			    (2497, 1661))
 			line_style 	0)
-		    (object ModVisView "" @78
+		    (object ModVisView "" @83
 			stereotype 	TRUE
 			line_color 	3342489
 			quidu      	"5C166F84022B"
-			client     	@70
-			supplier   	@74
+			client     	@75
+			supplier   	@79
 			vertices   	(list Points
 			    (2908, 1896)
 			    (3192, 1810))
 			line_style 	0)
-		    (object ModVisView "" @79
+		    (object ModVisView "" @84
 			stereotype 	TRUE
 			line_color 	3342489
 			quidu      	"5DFEB72F0369"
-			client     	@74
-			supplier   	@72
+			client     	@79
+			supplier   	@77
 			vertices   	(list Points
 			    (3678, 1564)
 			    (3799, 1373))
 			line_style 	0)
-		    (object ModView "Component View::VanredniPosao.xaml" "NotAModuleType" "NotAModulePart" @80
+		    (object ModView "Component View::VanredniPosao.xaml" "NotAModuleType" "NotAModulePart" @85
 			location   	(1427, 1204)
 			font       	(object Font
 			    size       	16
@@ -2866,7 +2983,7 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@80
+			    Parent_View 	@85
 			    location   	(1233, 1168)
 			    fill_color 	13434879
 			    anchor_loc 	3
@@ -2883,12 +3000,12 @@
 			autoResize 	TRUE
 			width      	1333
 			height     	241)
-		    (object ModVisView "" @81
+		    (object ModVisView "" @86
 			stereotype 	TRUE
 			line_color 	3342489
 			quidu      	"5DFE5E3200AB"
-			client     	@75
-			supplier   	@80
+			client     	@80
+			supplier   	@85
 			vertices   	(list Points
 			    (1526, 1536)
 			    (1451, 1319))
@@ -2926,7 +3043,7 @@
 		origin_x   	256
 		origin_y   	0
 		items      	(list diagram_item_list
-		    (object ProcessorView "Klijent" @82
+		    (object ProcessorView "Klijent" @87
 			location   	(934, 792)
 			font       	(object Font
 			    size       	10
@@ -2939,14 +3056,14 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@82
+			    Parent_View 	@87
 			    location   	(605, 611)
 			    nlines     	2
 			    max_width  	587
 			    justify    	0
 			    label      	"Klijent")
 			stereotype 	(object ItemLabel
-			    Parent_View 	@82
+			    Parent_View 	@87
 			    location   	(605, 561)
 			    anchor     	10
 			    nlines     	1
@@ -2959,7 +3076,7 @@
 			width      	662
 			height     	532
 			annotation 	0)
-		    (object ProcessorView "MS SQL server" @83
+		    (object ProcessorView "MS SQL server" @88
 			location   	(2420, 789)
 			font       	(object Font
 			    size       	10
@@ -2972,14 +3089,14 @@
 			    color      	0
 			    default_color 	TRUE)
 			label      	(object ItemLabel
-			    Parent_View 	@83
+			    Parent_View 	@88
 			    location   	(2084, 602)
 			    nlines     	2
 			    max_width  	600
 			    justify    	0
 			    label      	"MS SQL server")
 			stereotype 	(object ItemLabel
-			    Parent_View 	@83
+			    Parent_View 	@88
 			    location   	(2084, 552)
 			    anchor     	10
 			    nlines     	1
@@ -2992,7 +3109,7 @@
 			width      	675
 			height     	544
 			annotation 	0)
-		    (object ConnectionView "" @84
+		    (object ConnectionView "" @89
 			font       	(object Font
 			    size       	10
 			    face       	"Arial"
@@ -3003,8 +3120,8 @@
 			    strike     	FALSE
 			    color      	0
 			    default_color 	TRUE)
-			stereotype 	(object SegLabel @85
-			    Parent_View 	@84
+			stereotype 	(object SegLabel @90
+			    Parent_View 	@89
 			    location   	(1659, 671)
 			    font       	(object Font
 				size       	10
@@ -3027,13 +3144,13 @@
 			    orientation 	0)
 			line_color 	3342489
 			quidu      	"5C151B1902EE"
-			client     	@82
-			supplier   	@83
+			client     	@87
+			supplier   	@88
 			vertices   	(list Points
 			    (1234, 792)
 			    (2083, 789))
 			line_style 	0)
-		    (object Label @86
+		    (object Label @91
 			location   	(700, 1081)
 			font       	(object Font
 			    size       	10
@@ -3049,7 +3166,7 @@
 			max_width  	369
 			justify    	1
 			label      	"Desktop aplikacija")
-		    (object Label @87
+		    (object Label @92
 			location   	(2244, 1088)
 			font       	(object Font
 			    size       	10
